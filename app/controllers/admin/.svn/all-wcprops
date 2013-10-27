@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/app/controllers/admin
+END
+utilities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/app/controllers/admin/utilities_controller.rb
+END
+messages_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/app/controllers/admin/messages_controller.rb
+END

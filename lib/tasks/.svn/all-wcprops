@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks
+END
+reindex.rake
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/reindex.rake
+END
+cleanup_line_items.rake
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/cleanup_line_items.rake
+END
+recreate_fittings.rake
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/recreate_fittings.rake
+END
+db_staging_copies.rake
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/db_staging_copies.rake
+END
+deliver_order_reminder_emails.rake
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/deliver_order_reminder_emails.rake
+END
+backup.rake
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/backup.rake
+END
+update_piping_sizes.rake
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/update_piping_sizes.rake
+END
+svn.rake
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/svn.rake
+END
+db_helpers.rake
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/db_helpers.rake
+END
+thinking_sphinx_tasks.rake
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/thinking_sphinx_tasks.rake
+END
+deliver_requests_for_planner.rake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/deliver_requests_for_planner.rake
+END
+migrations.rake
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/migrations.rake
+END
+valve_csv_dump.rake
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/valve_csv_dump.rake
+END
+popv_import.rake
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/popv_import.rake
+END
+remigrate.rake
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/remigrate.rake
+END
+fix_piping_class_detail_piping_notes.rake
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/fix_piping_class_detail_piping_notes.rake
+END
+ferret_server_tasks.rake
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/ferret_server_tasks.rake
+END
+fix_pcd_notes.rake
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/fix_pcd_notes.rake
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/tasks/.gitkeep
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/rails_tracker/!svn/ver/2353/trunk/test
+END
+test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rails_tracker/!svn/ver/2353/trunk/test/test_helper.rb
+END
+fixtures
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/test/fixtures
+END

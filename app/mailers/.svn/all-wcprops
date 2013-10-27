@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/rails_tracker/!svn/ver/2353/trunk/app/mailers
+END
+request_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/app/mailers/request_mailer.rb
+END
+bill_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/rails_tracker/!svn/ver/2353/trunk/app/mailers/bill_mailer.rb
+END

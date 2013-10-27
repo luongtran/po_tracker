@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/rails_tracker/!svn/ver/2353/trunk/script
+END
+spec_server
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/rails_tracker/!svn/ver/2353/trunk/script/spec_server
+END
+console
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/script/console
+END
+autospec
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/rails_tracker/!svn/ver/2353/trunk/script/autospec
+END
+breakpointer
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rails_tracker/!svn/ver/2353/trunk/script/breakpointer
+END
+destroy
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/script/destroy
+END
+runner
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/script/runner
+END
+about
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/rails_tracker/!svn/ver/2353/trunk/script/about
+END
+generate
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/rails_tracker/!svn/ver/2353/trunk/script/generate
+END
+rails
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/rails_tracker/!svn/ver/2353/trunk/script/rails
+END
+spec
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/rails_tracker/!svn/ver/2353/trunk/script/spec
+END
+ferret_server
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/rails_tracker/!svn/ver/2353/trunk/script/ferret_server
+END
+client
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/script/client
+END
+plugin
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/script/plugin
+END

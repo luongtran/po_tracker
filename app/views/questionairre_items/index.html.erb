@@ -1,0 +1,27 @@
+<h1>Listing questionairre_items</h1>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Question</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @questionairre_items.each do |questionairre_item| %>
+  <tr>
+    <td><%= questionairre_item.order %></td>
+    <td><%= questionairre_item.question %></td>
+    <td><%= questionairre_item.type %></td>
+    <td><%= link_to 'Show', questionairre_item %></td>
+    <td><%= link_to 'Edit', edit_questionairre_item_path(questionairre_item) %></td>
+    <td><%= link_to 'Destroy', questionairre_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Questionairre item', new_questionairre_item_path %>

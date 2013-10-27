@@ -1,0 +1,8 @@
+production:
+  adapter: mysql
+  database: <%= user %>
+  username: <%= user %>
+  password: <%= ENV['password'] %>
+  host: localhost
+  socket: /var/lib/mysql/mysql.sock
+

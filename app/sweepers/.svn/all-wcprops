@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/rails_tracker/!svn/ver/2353/trunk/app/sweepers
+END
+piping_sweeper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/app/sweepers/piping_sweeper.rb
+END
+valve_sweeper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/app/sweepers/valve_sweeper.rb
+END

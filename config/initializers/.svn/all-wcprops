@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers
+END
+custom_matcher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/custom_matcher.rb
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/inflections.rb
+END
+load_resource_permissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/load_resource_permissions.rb
+END
+insterface_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/insterface_helper.rb
+END
+sext.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/sext.rb
+END
+validates_existence.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/validates_existence.rb
+END
+csv_fu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/csv_fu.rb
+END
+secret_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/secret_token.rb
+END
+spider_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/spider_test.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/backtrace_silencers.rb
+END
+custom_requires.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/custom_requires.rb
+END
+attributes_for.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/attributes_for.rb
+END
+to_csv.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/to_csv.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/session_store.rb
+END
+auto_complete.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/auto_complete.rb
+END
+acts_as_taggable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/acts_as_taggable.rb
+END
+acts_as_log_edits.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/acts_as_log_edits.rb
+END
+default_overrides.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/default_overrides.rb
+END
+acts_as_list.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/acts_as_list.rb
+END
+date_formats.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/date_formats.rb
+END
+newrelic.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/newrelic.rb
+END
+active_record.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/active_record.rb
+END
+states_for.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/states_for.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/config/initializers/mime_types.rb
+END

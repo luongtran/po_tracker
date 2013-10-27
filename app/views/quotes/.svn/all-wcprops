@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/quotes
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/quotes/index.html.erb
+END
+quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/quotes/quote.html.erb
+END
+_actions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/quotes/_actions.html.erb
+END
+_search.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/quotes/_search.html.erb
+END

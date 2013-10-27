@@ -1,0 +1,16 @@
+MAILTO="errors@telaeris.com"
+
+# Runs ThinkingSphinx indexing in production and outputs the info to crontab.log
+#0 * * * * cd <%= current_path %> && rake RAILS_ENV=production INDEX_ONLY=true thinking_sphinx:index 1>> <%= File.join(shared_path, 'log', 'crontab.log') %>
+
+# Sphinx Delta indexing. Not really needed unless using the Purchase Orders
+# or Material Request sections of the site.
+#<%= cron_iterator(sphinx_index_start_minute) %> * * * * cd <%= current_path %> && rake RAILS_ENV=production thinking_sphinx:index:delta > /dev/null
+<%= cron_iterator(sphinx_index_start_minute) %> * * * * /bin/bash -l -c 'cd <%= current_path %> && rake RAILS_ENV=production thinking_sphinx:index > /dev/null'
+
+# Generates the All Piping Classes PDF nightly at 3am
+#0 3 * * * /usr/local/reportman/printreptopdf -paramPCLASSIDS='0' <%= File.join(current_path, 'reports', 'piping_class_details_no_notes_linux.rep') %> 1> <%= File.join(shared_path, 'docs', 'All_Piping_Classes.pdf') %>
+
+
+# Runs the order reminders emailing tasks every day at 3am
+0 3 * * * /bin/bash -l -c 'cd <%= current_path %> && rake RAILS_ENV=production mailer:deliver_order_reminders_for_today 1>> <%= File.join(shared_path, 'log', 'email_order_reminders.log') %>'

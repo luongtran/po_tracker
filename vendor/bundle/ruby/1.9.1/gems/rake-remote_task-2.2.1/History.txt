@@ -1,0 +1,81 @@
+=== 2.2.1 / 2013-03-18
+
+* 1 minor enhancement:
+
+  * Pushed revision (head) variable down to vlad. (jari-dk)
+
+=== 2.2.0 / 2013-02-07
+
+* 2 minor enhancements:
+
+  * Fix the command to list the releases. The goal is to reduce the impact of an ssh error message (from off by word count to off by line count)
+  * Remove ssh error messages and ancillary dirs from release list
+
+* 1 bug fix:
+
+  * Fixed error with untimetstampted virgin deploy. (goosetav)
+
+=== 2.1.0 / 2012-11-23
+
+* 4 minor enhancements:
+
+  * Allow a set of preliminary commands that will always be run
+  * Allow the manipultation of array variable in which one can append values
+  * Trust remote umask by default
+  * Updated rake dep to be >= 0.8 and < 11.0 for the new wack version scheme. (MichaelXavier)
+
+* 3 bug fixes:
+
+  * Add documentation for +command_prefix+ in +run+
+  * Declare append as an operation of Rake:RemoteTask. Fix 7863.
+  * Fix misc coding style
+
+=== 2.0.6 / 2012-01-04
+
+* 1 minor enhancement:
+
+  * Add simple SSH example to the readme. (SixArm)
+
+* 1 bug fix:
+
+  * Fix concurrent modification in test with real threads (dekellum)
+
+=== 2.0.5 / 2011-10-14
+
+* 1 minor enhancement:
+
+  * Updated open4 dependency to 1.x family
+
+=== 2.0.4 / 2011-06-22
+
+* 2 bug fixes:
+
+  * Switched rake dependency to ~> 0.8 so we don't collide with other libs
+  * Included Rake::DSL inside of Rake::TestCase.
+
+=== 2.0.3 / 2011-02-18
+
+* 2 minor enhancements:
+
+  * Make failure code available via CommandFailedError. (ameuret)
+  * Support owner/group in vlad. (RichGuk)
+
+=== 2.0.2 / 2010-09-02
+
+* 1 bug fix:
+
+  * 1.9 fixes to quell test warnings and the like
+
+=== 2.0.1 / 2010-07-23
+
+* 1 bug fix:
+
+  * Fixed syntax error caused by being anal about 80 col boundary (bleything).
+
+=== 2.0.0 / 2010-07-15
+
+* 1 major enhancement
+
+  * Split out from Vlad.
+
+

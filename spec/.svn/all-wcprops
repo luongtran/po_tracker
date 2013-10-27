@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/rails_tracker/!svn/ver/2353/trunk/spec
+END
+attributes_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/attributes_helper.rb
+END
+extend_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/extend_helper.rb
+END
+spec_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/spec_helper.rb
+END
+rcov.opts
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/rcov.opts
+END
+spec.opts
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/spec.opts
+END

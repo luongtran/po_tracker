@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/db/data_files
+END
+bpcherrypoint_manufacturers.csv
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/data_files/bpcherrypoint_manufacturers.csv
+END
+complete_list_of_units.csv
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/data_files/complete_list_of_units.csv
+END
+bpcherrypoint_employees.csv
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/db/data_files/bpcherrypoint_employees.csv
+END
+old_units_data.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/data_files/old_units_data.sql
+END

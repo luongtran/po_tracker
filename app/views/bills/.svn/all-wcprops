@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/edit.html.erb
+END
+mail_for_quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/mail_for_quote.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/new.html.erb
+END
+_pipe_materials.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/_pipe_materials.html.erb
+END
+_actions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/_actions.html.erb
+END
+_search.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/bills/_search.html.erb
+END

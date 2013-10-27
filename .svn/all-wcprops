@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/rails_tracker/!svn/ver/2385/trunk
+END
+Gemfile.lock
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/rails_tracker/!svn/ver/2353/trunk/Gemfile.lock
+END
+CODE_CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/CODE_CHANGELOG
+END
+stderr.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/rails_tracker/!svn/ver/2353/trunk/stderr.txt
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/rails_tracker/!svn/ver/2353/trunk/Rakefile
+END
+CHANGELOG.old
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/CHANGELOG.old
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/rails_tracker/!svn/ver/2353/trunk/.gitignore
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/rails_tracker/!svn/ver/2353/trunk/CHANGELOG
+END
+Gemfile
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/rails_tracker/!svn/ver/2353/trunk/Gemfile
+END
+PROJECT_INFORMATION.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2353/trunk/PROJECT_INFORMATION.txt
+END
+.rspec
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/rails_tracker/!svn/ver/2353/trunk/.rspec
+END
+config.ru
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/rails_tracker/!svn/ver/2353/trunk/config.ru
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/rails_tracker/!svn/ver/2353/trunk/README
+END
+client
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/rails_tracker/!svn/ver/2353/trunk/client
+END

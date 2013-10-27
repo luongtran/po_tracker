@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/rails_tracker/!svn/ver/2385/trunk/config
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/rails_tracker/!svn/ver/2353/trunk/config/routes.rb
+END
+application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/config/application.rb
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/config/environment.rb
+END
+database.yml.northhawk
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/config/database.yml.northhawk
+END
+newrelic.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rails_tracker/!svn/ver/2353/trunk/config/newrelic.yml
+END
+amazon_s3.yml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/rails_tracker/!svn/ver/2353/trunk/config/amazon_s3.yml
+END
+asset_packages.yml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/config/asset_packages.yml
+END
+ferret_server.yml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/config/ferret_server.yml
+END
+development.sphinx.conf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/config/development.sphinx.conf
+END

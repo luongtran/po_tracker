@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/rails_tracker/!svn/ver/2353/trunk/lib
+END
+listable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/listable.rb
+END
+gruffer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/gruffer.rb
+END
+gruff_grapher.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/gruff_grapher.rb
+END
+extra_http_verbs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/extra_http_verbs.rb
+END
+thinking_sphinx_extensions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/thinking_sphinx_extensions.rb
+END
+piping_reference_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/piping_reference_helper.rb
+END
+gruff_extender.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/gruff_extender.rb
+END
+filter_foo.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/filter_foo.rb
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/acts_as_taggable
+END
+tagging.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/acts_as_taggable/tagging.rb
+END
+acts_as_taggable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/acts_as_taggable/acts_as_taggable.rb
+END
+tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/lib/acts_as_taggable/tag.rb
+END

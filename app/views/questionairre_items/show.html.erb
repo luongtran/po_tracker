@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Order:</b>
+  <%= @questionairre_item.order %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @questionairre_item.question %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @questionairre_item.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_questionairre_item_path(@questionairre_item) %> |
+<%= link_to 'Back', questionairre_items_path %>

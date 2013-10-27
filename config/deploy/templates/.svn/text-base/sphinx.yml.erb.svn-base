@@ -1,0 +1,16 @@
+# Other configuration options:
+# 	:config_file, :searchd_log_file, :query_log_file, :pid_file, 
+#	:searchd_file_path, :address, :port, :allow_star, :database_yml_file, 
+# 	:app_root, :bin_path, :model_directories, :delayed_job_priority
+
+production:
+   bin_path: '/usr/local/sphinx/bin'
+   pid_file: '<%= File.join(shared_path, 'pids', 'searchd.production.pid') %>'
+   config_file: '<%= File.join(shared_path, 'sphinx_config', 'production.sphinx.conf') %>'
+   searchd_file_path: '<%= File.join(shared_path, 'sphinx_index', 'production') %>'
+   sql_sock: '/var/lib/mysql/mysql.sock'
+   port: <%= sphinx_port %>
+   enable_star: 1
+   min_infix_len: 2
+   max_matches: 20000
+

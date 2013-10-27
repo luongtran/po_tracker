@@ -1,0 +1,1187 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/rails_tracker/!svn/ver/2379/trunk/db/migrate
+END
+20090904232734_add_valve_fields_from_components.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090904232734_add_valve_fields_from_components.rb
+END
+20090909210600_update_record_changelogs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090909210600_update_record_changelogs.rb
+END
+071_add_unit_of_measure_to_quote_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/071_add_unit_of_measure_to_quote_item.rb
+END
+20101008172932_add_comments_to_valves.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101008172932_add_comments_to_valves.rb
+END
+103_add_status_to_bill.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/103_add_status_to_bill.rb
+END
+041_create_carts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/041_create_carts.rb
+END
+088_change_sent_by_to_emailed_by.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/088_change_sent_by_to_emailed_by.rb
+END
+119_add_default_piping_size_to_bills_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/119_add_default_piping_size_to_bills_table.rb
+END
+068_add_seen_update_to_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/068_add_seen_update_to_employees.rb
+END
+005_create_companies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/005_create_companies.rb
+END
+20130612233533_convert_crm_employees_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2357/trunk/db/migrate/20130612233533_convert_crm_employees_to_users.rb
+END
+013_remove_plaintext_password.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/013_remove_plaintext_password.rb
+END
+110_add_requested_to_bill.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/110_add_requested_to_bill.rb
+END
+20130930171834_pcd_indexes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2378/trunk/db/migrate/20130930171834_pcd_indexes.rb
+END
+107_extend_boms.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/107_extend_boms.rb
+END
+016_create_material_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/016_create_material_requests.rb
+END
+046_add_fields_to_cart_items_for_csv.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/046_add_fields_to_cart_items_for_csv.rb
+END
+076_add_updated_at_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/076_add_updated_at_to_events.rb
+END
+094_create_piping_specification.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/094_create_piping_specification.rb
+END
+008_create_ordered_line_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/008_create_ordered_line_items.rb
+END
+072_add_activity_to_material_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/072_add_activity_to_material_requests.rb
+END
+084_create_unit_for_measures.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/084_create_unit_for_measures.rb
+END
+095_add_buyer_and_archived_boolean_field_to_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/095_add_buyer_and_archived_boolean_field_to_employees.rb
+END
+20130510134234_change_column_ordered_line_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20130510134234_change_column_ordered_line_items.rb
+END
+20110715072317_add_description_to_material_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110715072317_add_description_to_material_requests.rb
+END
+137_manufacturers_valves_add_column_figure_no.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/137_manufacturers_valves_add_column_figure_no.rb
+END
+066_add_fields_to_quotes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/066_add_fields_to_quotes.rb
+END
+007_create_log_edits.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/007_create_log_edits.rb
+END
+20090910210231_add_ticket_attachments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090910210231_add_ticket_attachments.rb
+END
+20110701220518_create_vendor_groups_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110701220518_create_vendor_groups_table.rb
+END
+082_add_acknowledged_by_to_quotes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/082_add_acknowledged_by_to_quotes.rb
+END
+002_create_vendors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/002_create_vendors.rb
+END
+135_valves_valve_components_change_component_text.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/135_valves_valve_components_change_component_text.rb
+END
+019_create_requested_line_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/019_create_requested_line_items.rb
+END
+109_modify_user_notes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/109_modify_user_notes.rb
+END
+20091202204807_reference_number_types_add_default_column.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20091202204807_reference_number_types_add_default_column.rb
+END
+20090702234249_ordered_line_items_drop_piping_class_field.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090702234249_ordered_line_items_drop_piping_class_field.rb
+END
+20090728221212_quote_items_add_vendor_part_number_field.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090728221212_quote_items_add_vendor_part_number_field.rb
+END
+102_modify_boms.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/102_modify_boms.rb
+END
+124_change_strings_to_text_fields_for_popv.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/124_change_strings_to_text_fields_for_popv.rb
+END
+127_bills_add_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/127_bills_add_fields.rb
+END
+20090707175600_create_quote_attachments_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090707175600_create_quote_attachments_table.rb
+END
+20090903230137_add_defaults_to_piping_and_valves.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090903230137_add_defaults_to_piping_and_valves.rb
+END
+025_create_piping_materials.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/025_create_piping_materials.rb
+END
+086_create_material_request_order_join.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/086_create_material_request_order_join.rb
+END
+017_add_index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/017_add_index.rb
+END
+027_change_piping_class_note_to_piping_note_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/027_change_piping_class_note_to_piping_note_id.rb
+END
+004_create_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/004_create_employees.rb
+END
+045_add_more_fields_to_cart_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/045_add_more_fields_to_cart_request.rb
+END
+029_add_foreign_key_to_requested_line_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/029_add_foreign_key_to_requested_line_item.rb
+END
+20090914182145_employees_add_group_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090914182145_employees_add_group_id.rb
+END
+20110112234901_move_manufacturers_back.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110112234901_move_manufacturers_back.rb
+END
+085_remove_ext_and_total_price.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/085_remove_ext_and_total_price.rb
+END
+028_change_requested_line_item_kind_and_details.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/028_change_requested_line_item_kind_and_details.rb
+END
+015_add_acknowledge_and_authorized_to_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/015_add_acknowledge_and_authorized_to_orders.rb
+END
+117_update_access_db_replicas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/117_update_access_db_replicas.rb
+END
+20090707175500_create_general_references_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090707175500_create_general_references_table.rb
+END
+20090930233402_valves_update_type_body_rating.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090930233402_valves_update_type_body_rating.rb
+END
+064_create_quotes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/064_create_quotes.rb
+END
+054_change_web_sent_received_at.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/054_change_web_sent_received_at.rb
+END
+040_add_declined_to_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/040_add_declined_to_requests.rb
+END
+20110106185649_update_pcd_sizes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110106185649_update_pcd_sizes.rb
+END
+108_add_current_popv_tabs_to_employee.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/108_add_current_popv_tabs_to_employee.rb
+END
+023_change_requests_authorized.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/023_change_requests_authorized.rb
+END
+077_changed_requested_on_to_at_mat_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/077_changed_requested_on_to_at_mat_request.rb
+END
+034_add_sessions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/034_add_sessions.rb
+END
+020_remove_dirty_flags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/020_remove_dirty_flags.rb
+END
+009_create_virtual_badges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/009_create_virtual_badges.rb
+END
+014_create_assets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/014_create_assets.rb
+END
+120_add_archived_field_to_valves_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/120_add_archived_field_to_valves_table.rb
+END
+018_add_description_to_material_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/018_add_description_to_material_request.rb
+END
+20090730171536_material_requests_remove_old_piping_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730171536_material_requests_remove_old_piping_fields.rb
+END
+021_change_request_class_to_kind.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/021_change_request_class_to_kind.rb
+END
+057_create_reference.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/057_create_reference.rb
+END
+20090930232658_material_requests_convert_ptm_no_to_reference_number.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090930232658_material_requests_convert_ptm_no_to_reference_number.rb
+END
+111_add_superseded_flag_to_bills.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/111_add_superseded_flag_to_bills.rb
+END
+20091111183854_remigrate_numbers_and_recent_date_range.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20091111183854_remigrate_numbers_and_recent_date_range.rb
+END
+20091106221943_create_admin_messages_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20091106221943_create_admin_messages_table.rb
+END
+20090905000000_create_tickets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090905000000_create_tickets.rb
+END
+047_create_bills.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/047_create_bills.rb
+END
+081_create_basket_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/081_create_basket_items.rb
+END
+037_change_boolean_fields_on_material_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/037_change_boolean_fields_on_material_request.rb
+END
+20101020234504_create_old_manufacturers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101020234504_create_old_manufacturers.rb
+END
+101_create_user_notes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/101_create_user_notes.rb
+END
+001_create_purchase_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/001_create_purchase_orders.rb
+END
+20090707175700_create_piping_references_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090707175700_create_piping_references_table.rb
+END
+20090730172943_requested_line_items_remove_old_piping_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730172943_requested_line_items_remove_old_piping_fields.rb
+END
+20101118232151_add_cross_reference_to_piping_classes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101118232151_add_cross_reference_to_piping_classes.rb
+END
+104_create_access_db_replicas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/104_create_access_db_replicas.rb
+END
+061_change_date_need_by_for_carts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/061_change_date_need_by_for_carts.rb
+END
+20110225180132_add_csv_attachment_to_record_changelogs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110225180132_add_csv_attachment_to_record_changelogs.rb
+END
+114_remove_subcomponents.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/114_remove_subcomponents.rb
+END
+20130510133823_change_column_piping_class_details.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20130510133823_change_column_piping_class_details.rb
+END
+115_modify_bills.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/115_modify_bills.rb
+END
+20101101170147_add_bom_xls_file_to_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101101170147_add_bom_xls_file_to_user.rb
+END
+070_add_discussions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/070_add_discussions.rb
+END
+053_modify_data_for_new_schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/053_modify_data_for_new_schema.rb
+END
+080_create_baskets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/080_create_baskets.rb
+END
+20120727213629_create_material_request_attachments_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20120727213629_create_material_request_attachments_table.rb
+END
+093_change_ordered_line_items_and_requested_line_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/093_change_ordered_line_items_and_requested_line_items.rb
+END
+092_add_archived_to_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/092_add_archived_to_orders.rb
+END
+130_change_pcd_description_to_text.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/130_change_pcd_description_to_text.rb
+END
+006_create_units.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/006_create_units.rb
+END
+20090730173428_material_requests_add_logging_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730173428_material_requests_add_logging_fields.rb
+END
+049_new_sizes_for_bill_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/049_new_sizes_for_bill_items.rb
+END
+058_create_folders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/058_create_folders.rb
+END
+011_create_indeces.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/011_create_indeces.rb
+END
+113_add_popv_enabled_to_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/113_add_popv_enabled_to_employees.rb
+END
+033_add_fields_to_request_bill.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/033_add_fields_to_request_bill.rb
+END
+073_create_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/073_create_events.rb
+END
+024_change_requests_description_to_notes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/024_change_requests_description_to_notes.rb
+END
+20110701220517_add_delta_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110701220517_add_delta_fields.rb
+END
+20090806163249_create_record_changelogs_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090806163249_create_record_changelogs_table.rb
+END
+105_add_index_to_piping_notes_piping_class_details.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/105_add_index_to_piping_notes_piping_class_details.rb
+END
+052_new_fields_for_states_on_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/052_new_fields_for_states_on_requests.rb
+END
+097_add_issued_quantity_to_ordered_line_items_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/097_add_issued_quantity_to_ordered_line_items_table.rb
+END
+20090921175800_create_resource_permissions_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090921175800_create_resource_permissions_table.rb
+END
+030_create_piping_subcomponent.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/030_create_piping_subcomponent.rb
+END
+074_create_emails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/074_create_emails.rb
+END
+20101005214151_add_fugitive_emissions_test_to_manufacturers_valves.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101005214151_add_fugitive_emissions_test_to_manufacturers_valves.rb
+END
+128_units_strip_carriage_returns.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/128_units_strip_carriage_returns.rb
+END
+129_reminders_add_sent_on_datetime_field.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/129_reminders_add_sent_on_datetime_field.rb
+END
+048_create_bill_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/048_create_bill_items.rb
+END
+062_relate_material_request_to_cart.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/062_relate_material_request_to_cart.rb
+END
+116_add_unit_no_to_units_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/116_add_unit_no_to_units_table.rb
+END
+20110721125511_add_attachment_file_name_to_material_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110721125511_add_attachment_file_name_to_material_requests.rb
+END
+20110106185626_add_size_fields_to_pcd.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110106185626_add_size_fields_to_pcd.rb
+END
+026_new_piping_schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/026_new_piping_schema.rb
+END
+050_create_vendor_bill_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/050_create_vendor_bill_items.rb
+END
+096_modify_ordered_line_items_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/096_modify_ordered_line_items_table.rb
+END
+20110707062226_create_vendor_groups_vendors_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110707062226_create_vendor_groups_vendors_join_table.rb
+END
+056_add_issued_from_main_by_to_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/056_add_issued_from_main_by_to_requests.rb
+END
+20090716233956_valve_components_add_order_numbering.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090716233956_valve_components_add_order_numbering.rb
+END
+20090730190807_migrate_bill_reference_numbers_to_new_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730190807_migrate_bill_reference_numbers_to_new_fields.rb
+END
+131_reminders_add_updated_at_field.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/131_reminders_add_updated_at_field.rb
+END
+20110226001322_add_old_mv_table_again.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110226001322_add_old_mv_table_again.rb
+END
+20090914181548_create_groups.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090914181548_create_groups.rb
+END
+20130510133836_change_column_valves_valve_components.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20130510133836_change_column_valves_valve_components.rb
+END
+032_add_fields_to_inventory_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/032_add_fields_to_inventory_table.rb
+END
+063_add_access_key_to_vendor.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/063_add_access_key_to_vendor.rb
+END
+051_add_fields_to_deal_with_web_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/051_add_fields_to_deal_with_web_request.rb
+END
+20110721004422_add_delta_to_quotes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110721004422_add_delta_to_quotes.rb
+END
+012_add_requester_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/012_add_requester_fields.rb
+END
+055_add_created_by_to_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/055_add_created_by_to_requests.rb
+END
+044_add_more_fields_to_cart.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/044_add_more_fields_to_cart.rb
+END
+090_add_index_to_requested_line_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/090_add_index_to_requested_line_items.rb
+END
+20110715091911_fill_previous_material_requests_records_with_descriptions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110715091911_fill_previous_material_requests_records_with_descriptions.rb
+END
+031_create_inventory_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/031_create_inventory_items.rb
+END
+100_add_surplus_remove_archived_from_mat_reqs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/100_add_surplus_remove_archived_from_mat_reqs.rb
+END
+089_add_deleted_to_material_request.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/089_add_deleted_to_material_request.rb
+END
+20110708165040_add_delta_to_po_status.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110708165040_add_delta_to_po_status.rb
+END
+043_add_unit_to_carts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/043_add_unit_to_carts.rb
+END
+099_modify_piping_classes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/099_modify_piping_classes.rb
+END
+022_change_requests_tracking_to_string.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/022_change_requests_tracking_to_string.rb
+END
+036_add_billing_fields_to_requested_line_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/036_add_billing_fields_to_requested_line_item.rb
+END
+091_add_fax_to_employee.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/091_add_fax_to_employee.rb
+END
+067_add_start_page_to_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/067_add_start_page_to_employees.rb
+END
+136_piping_class_details_change_description.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/136_piping_class_details_change_description.rb
+END
+20130510133738_change_column_inventory_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20130510133738_change_column_inventory_items.rb
+END
+20101105213103_add_order_to_piping_class_detail.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101105213103_add_order_to_piping_class_detail.rb
+END
+125_reimport_popv_data_after_changing_string_to_text_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/125_reimport_popv_data_after_changing_string_to_text_fields.rb
+END
+20090724203832_add_parent_to_piping_components.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090724203832_add_parent_to_piping_components.rb
+END
+083_create_numbers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/083_create_numbers.rb
+END
+038_add_purchaser_to_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/038_add_purchaser_to_requests.rb
+END
+118_update_units_from_csv.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/118_update_units_from_csv.rb
+END
+121_add_sort_column_to_piping_sizes_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/121_add_sort_column_to_piping_sizes_table.rb
+END
+123_updated_units_from_csv.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/123_updated_units_from_csv.rb
+END
+069_add_ext_price_and_total_to_quote.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/069_add_ext_price_and_total_to_quote.rb
+END
+20090702231941_ordered_line_items_rename_class_column.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090702231941_ordered_line_items_rename_class_column.rb
+END
+20101029182518_remove_emissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20101029182518_remove_emissions.rb
+END
+042_create_cart_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/042_create_cart_items.rb
+END
+075_drop_recordable_on_emails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/075_drop_recordable_on_emails.rb
+END
+039_change_stage_field_for_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/039_change_stage_field_for_requests.rb
+END
+106_add_line_num_to_bill_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/106_add_line_num_to_bill_items.rb
+END
+122_merge_description_fields_in_piping_class_details_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/122_merge_description_fields_in_piping_class_details_table.rb
+END
+079_add_taggings.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/079_add_taggings.rb
+END
+20130930201458_remove_duplicate_piping_notes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/rails_tracker/!svn/ver/2379/trunk/db/migrate/20130930201458_remove_duplicate_piping_notes.rb
+END
+098_add_current_bom_to_employees.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/098_add_current_bom_to_employees.rb
+END
+065_create_quote_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/065_create_quote_items.rb
+END
+132_add_manufacturers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/132_add_manufacturers.rb
+END
+010_create_po_statuses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/010_create_po_statuses.rb
+END
+060_remove_web_requests_from_material_requests_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/060_remove_web_requests_from_material_requests_table.rb
+END
+059_change_cart_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/059_change_cart_fields.rb
+END
+133_add_manufacturers_valves_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/133_add_manufacturers_valves_join_table.rb
+END
+035_add_more_fields_to_inventory_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/035_add_more_fields_to_inventory_item.rb
+END
+20091212013325_record_changelogs_add_record_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20091212013325_record_changelogs_add_record_id.rb
+END
+20130501185230_fix_join_tables.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20130501185230_fix_join_tables.rb
+END
+20090730175900_create_reference_number_types_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730175900_create_reference_number_types_table.rb
+END
+20090914182202_purchase_orders_add_group_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090914182202_purchase_orders_add_group_id.rb
+END
+20110805175557_add_order_to_po_status.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20110805175557_add_order_to_po_status.rb
+END
+126_drop_valve_details_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/126_drop_valve_details_table.rb
+END
+112_create_reminders_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/112_create_reminders_table.rb
+END
+20090730175917_add_reference_numbers_to_material_requests_and_bills.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090730175917_add_reference_numbers_to_material_requests_and_bills.rb
+END
+078_add_employee_direct_search_field.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/078_add_employee_direct_search_field.rb
+END
+20090914182218_material_requests_add_group_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/20090914182218_material_requests_add_group_id.rb
+END
+134_general_notes_change_section_text.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/134_general_notes_change_section_text.rb
+END
+087_add_sent_by_to_quotes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/db/migrate/087_add_sent_by_to_quotes.rb
+END

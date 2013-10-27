@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2385/trunk/config/deploy
+END
+vlad_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2375/trunk/config/deploy/vlad_helper.rb
+END
+deploy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2385/trunk/config/deploy/deploy.rb
+END

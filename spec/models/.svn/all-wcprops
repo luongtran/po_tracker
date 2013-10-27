@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models
+END
+piping_reference_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/piping_reference_spec.rb
+END
+reminder_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/reminder_spec.rb
+END
+purchase_order_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/purchase_order_spec.rb
+END
+company_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/company_spec.rb
+END
+material_request_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/material_request_spec.rb
+END
+cart_item_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/cart_item_spec.rb
+END
+piping_component_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/piping_component_spec.rb
+END
+ordered_line_item_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/ordered_line_item_spec.rb
+END
+basket_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/basket_spec.rb
+END
+vendor_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/vendor_group_spec.rb
+END
+piping_class_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/piping_class_spec.rb
+END
+order_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/order_spec.rb
+END
+inventory_item_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/inventory_item_spec.rb
+END
+valve_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/valve_spec.rb
+END
+employee_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/employee_spec.rb
+END
+unit_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/unit_spec.rb
+END
+bill_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/bill_spec.rb
+END
+valve_observer_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/valve_observer_spec.rb
+END
+record_changelog_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/record_changelog_spec.rb
+END
+requested_line_item_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/requested_line_item_spec.rb
+END
+basket_item_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/basket_item_spec.rb
+END
+email_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/email_spec.rb
+END
+cart_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/cart_spec.rb
+END
+link_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/link_spec.rb
+END
+vendor_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/vendor_spec.rb
+END
+valve_component_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/models/valve_component_spec.rb
+END

@@ -1,0 +1,9 @@
+[<%= user %>]
+Driver          = ODBC-MySQL-DRIVER
+SERVER          = localhost
+PORT            = 3306
+DATABASE        = <%= user %>
+OPTION          = 131072
+USER            = <%= user %>
+PASSWORD        = <%= ENV['password'] %>
+

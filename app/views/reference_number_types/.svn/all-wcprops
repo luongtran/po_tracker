@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/new.html.erb
+END
+_actions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/_actions.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/show.html.erb
+END
+_search.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/reference_number_types/_search.html.erb
+END

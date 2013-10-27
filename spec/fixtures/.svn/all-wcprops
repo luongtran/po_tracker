@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures
+END
+general_notes.csv
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/general_notes.csv
+END
+vendors.yml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/vendors.yml
+END
+piping_material_specifications.csv
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_material_specifications.csv
+END
+piping_materials.csv
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_materials.csv
+END
+purchase_orders.csv
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/purchase_orders.csv
+END
+piping_notes.csv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_notes.csv
+END
+purchase_orders.yml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/purchase_orders.yml
+END
+manufacturers_valves.csv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/manufacturers_valves.csv
+END
+unit_for_measures.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/unit_for_measures.yml
+END
+valves.csv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/valves.csv
+END
+baskets.yml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/baskets.yml
+END
+employees.csv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/employees.csv
+END
+units.csv
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/units.csv
+END
+piping_classes.csv
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_classes.csv
+END
+piping_sizes.csv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_sizes.csv
+END
+piping_subcomponents.csv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_subcomponents.csv
+END
+units.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/units.yml
+END
+employees.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/employees.yml
+END
+companies.csv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/companies.csv
+END
+basket_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/basket_items.yml
+END
+carts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/carts.yml
+END
+companies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/companies.yml
+END
+quotes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/quotes.yml
+END
+virtual_badges.csv
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/virtual_badges.csv
+END
+piping_components.csv
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_components.csv
+END
+ordered_line_items.csv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/ordered_line_items.csv
+END
+piping_notes_piping_class_details.csv
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_notes_piping_class_details.csv
+END
+material_requests.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/material_requests.yml
+END
+cart_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/cart_items.yml
+END
+ordered_line_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/ordered_line_items.yml
+END
+valves_valve_components.csv
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/valves_valve_components.csv
+END
+piping_codes.csv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_codes.csv
+END
+quote_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/quote_items.yml
+END
+inventory_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/inventory_items.yml
+END
+unit_of_measures.csv
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/unit_of_measures.csv
+END
+assets.yml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/assets.yml
+END
+po_statuses.csv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/po_statuses.csv
+END
+manufacturers.csv
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/manufacturers.csv
+END
+requested_line_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/requested_line_items.yml
+END
+vendors.csv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/vendors.csv
+END
+piping_class_details.csv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/piping_class_details.csv
+END
+valve_details.csv
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/valve_details.csv
+END
+valve_components.csv
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/rails_tracker/!svn/ver/2353/trunk/spec/fixtures/valve_components.csv
+END

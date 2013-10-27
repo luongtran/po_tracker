@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests
+END
+remove_line_item.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/remove_line_item.rjs
+END
+_request_attachments_for_quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_request_attachments_for_quote.html.erb
+END
+new_quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/new_quote.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/index.html.erb
+END
+remove_po_links.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/remove_po_links.rjs
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/show.html.erb
+END
+quotes.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/quotes.html.erb
+END
+bill.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/bill.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/edit.html.erb
+END
+quote_comparison.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/quote_comparison.html.erb
+END
+sort.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/sort.html.erb
+END
+vendor_email.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/vendor_email.rjs
+END
+_new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_new.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/new.html.erb
+END
+remove_po_link.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/remove_po_link.rjs
+END
+_select_vendor.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_select_vendor.html.erb
+END
+quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/quote.html.erb
+END
+_pipe_materials.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_pipe_materials.html.erb
+END
+_actions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_actions.html.erb
+END
+_links_to_orders.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_links_to_orders.html.erb
+END
+mail_to_purchaser.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/mail_to_purchaser.html.erb
+END
+new_line_item.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/new_line_item.rjs
+END
+_line_item.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_line_item.html.erb
+END
+_search.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/_search.html.erb
+END
+email_quote.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/rails_tracker/!svn/ver/2353/trunk/app/views/material_requests/email_quote.html.erb
+END
