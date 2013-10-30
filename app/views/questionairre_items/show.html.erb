@@ -1,20 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div style='max-width: 400px;padding:7px;border: 1px solid #eee;'>
+  <p>
+    <b>Question:</b>
+    <%= @questionairre_item.question %>
+  </p>
+  <br/>
 
-<p>
-  <b>Order:</b>
-  <%= @questionairre_item.order %>
-</p>
+  <p>
+    <b>Type:</b>
+    <%= @questionairre_item.question_type %>
+  </p>
+  <br/>
 
-<p>
-  <b>Question:</b>
-  <%= @questionairre_item.question %>
-</p>
+  <%= render :partial => "questionairre_items/types/#{@questionairre_item.question_type}", :locals => {:questionairre_item => @questionairre_item} %>
+</div>
 
-<p>
-  <b>Type:</b>
-  <%= @questionairre_item.type %>
-</p>
-
-
-<%= link_to 'Edit', edit_questionairre_item_path(@questionairre_item) %> |
 <%= link_to 'Back', questionairre_items_path %>

@@ -3,7 +3,6 @@ class QuestionairreItemsController < ApplicationController
   # GET /questionairre_items.json
   def index
     @questionairre_items = QuestionairreItem.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questionairre_items }
@@ -13,8 +12,7 @@ class QuestionairreItemsController < ApplicationController
   # GET /questionairre_items/1
   # GET /questionairre_items/1.json
   def show
-    @questionairre_item = QuestionairreItem.find(params[:id])
-
+    @questionairre_item = QuestionairreItem.includes(:questionairre_answers).find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @questionairre_item }
@@ -25,7 +23,7 @@ class QuestionairreItemsController < ApplicationController
   # GET /questionairre_items/new.json
   def new
     @questionairre_item = QuestionairreItem.new
-
+    @types = QuestionairreItem::TYPES
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @questionairre_item }
@@ -41,13 +39,20 @@ class QuestionairreItemsController < ApplicationController
   # POST /questionairre_items.json
   def create
     @questionairre_item = QuestionairreItem.new(params[:questionairre_item])
-
     respond_to do |format|
       if @questionairre_item.save
+
+        ## To step 2
+        #format.html {
+        #  render :partial => "step2",
+        #         :layout => false,
+        #         :locals => { :questionairre_item => @questionairre_item}
+        #}
         format.html { redirect_to @questionairre_item, notice: 'Questionairre item was successfully created.' }
         format.json { render json: @questionairre_item, status: :created, location: @questionairre_item }
       else
-        format.html { render action: "new" }
+        @types = QuestionairreItem::TYPES
+        format.html { render :action => "new" }
         format.json { render json: @questionairre_item.errors, status: :unprocessable_entity }
       end
     end
@@ -80,4 +85,28 @@ class QuestionairreItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def save_answer
+    question = QuestionairreItem.includes(:questionairre_answers).find(params[:questionairre_answer][:questionairre_item_id])
+
+    if ['text', 'yes_or_no'].include?(question.question_type)
+      if question.questionairre_answers.empty?
+        QuestionairreAnswer.create(params[:questionairre_answer])
+      else
+        # check id match
+        answer = QuestionairreAnswer.find(params[:questionairre_answer][:id])
+        answer.update_attributes(params[:questionairre_answer])
+      end
+    else
+      if question.question_type == 'single_choice'
+
+      else   # type = multi_choice
+
+      end
+
+    end
+    #FIXME
+    render :nothing => true
+  end
+
 end

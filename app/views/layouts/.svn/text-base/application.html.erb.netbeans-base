@@ -19,7 +19,7 @@
     <% elsif params[:q] %>
         Search: <%= params[:q] %> | Material Tracker
     <% else %>
-        <%= "Material Tracker | By Telaeris Inc." %>
+        <%= "#{ENV['DEPLOY_SITE_NAME']} Material Tracker | By Telaeris Inc." %>
     <% end %>
   </title>
 
@@ -110,7 +110,7 @@ because it can't be included for media='screen' -->
     <% end %>
 
     <div id="version">
-       Version: <%= ENV['MATERIAL_TRACKER_VERSION'] %> | <%#= render :partial => "shared/version" %>
+       Version: <%= ENV['MATERIAL_TRACKER_VERSION'] %> | <%= render :partial => "shared/version" %>
     </div>
 
     <% unless params[:controller] == 'home' && ['index', 'superuser'].include?(params[:action]) %>

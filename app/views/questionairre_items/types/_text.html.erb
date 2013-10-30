@@ -1,0 +1,38 @@
+<!--Check require variables -->
+<p>
+  <b>Answer Expect:</b>
+</p>
+
+<br/>
+
+<% text_answer = questionairre_item.questionairre_answers.first %>
+<div class="field">
+  <%= form_for text_answer, :as => :questionairre_answer, :url => '', :html => {:id => 'questionairre_answer_form', :method => 'POST'} do |f| %>
+      <%= f.hidden_field :questionairre_item_id, :value => questionairre_item.id %>
+      <%= f.hidden_field :id if text_answer %>
+      <%= f.text_area :answer_text, :rows => 5, :cols => 60, :required => true %>
+      <div class="actions" style="text-align: center">
+        <%= f.submit ' Save ' %>
+      </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery('#questionairre_answer_form').on('submit', function () {
+            jQuery('#questionairre_answer_answer_text').val().trim();
+            jQuery.ajax({
+                url: '/save_questionairre_answers',
+                type: 'POST',
+                data: jQuery(this).serialize(),
+                success: function () {
+
+                },
+                error: function () {
+                      alert('An error has occurred')
+                }
+            });
+            return false;
+        });
+    });
+</script>

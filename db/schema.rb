@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131024004146) do
+ActiveRecord::Schema.define(:version => 20131030084833) do
 
   create_table "admin_messages", :force => true do |t|
     t.string   "text"
@@ -604,12 +604,24 @@ ActiveRecord::Schema.define(:version => 20131024004146) do
 
   add_index "purchase_orders", ["created"], :name => "index_purchase_orders_on_created"
 
+  create_table "questionairre_answers", :force => true do |t|
+    t.integer  "questionairre_item_id"
+    t.text     "answer_text"
+    t.boolean  "answer_yes_or_no_expect"
+    t.string   "answer_multi_choice_label"
+    t.boolean  "answer_multi_choice_expect"
+    t.string   "answer_single_choice_label"
+    t.boolean  "answer_single_choice_expect"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
   create_table "questionairre_items", :force => true do |t|
     t.integer  "order"
     t.string   "question"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "question_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "quote_attachments", :force => true do |t|

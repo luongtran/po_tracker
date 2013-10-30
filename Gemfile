@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.6.1.beta1'
   gem 'rspec', '~> 2.6'
   gem "factory_girl_rails"
+  gem 'meta_request'
 end
 
 #gem 'fcgi'

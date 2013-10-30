@@ -16,15 +16,31 @@
     </div>
     <div class="field">
       <br/>
-
       <%= f.label "Type: " %>
       <% choices = @types.map { |type| [type.gsub('_', ' ').capitalize, type] } %>
       <%= f.select :question_type, choices %>
-
     </div>
 
     <div class="actions" style="text-align: center">
       <br/>
-      <%= f.submit ' Save ' %>
+      <%= f.submit 'Save & Continue' %>
     </div>
 <% end %>
+<script type="text/javascript">
+    jQuery('#new_questionairre_item').on('submit', function () {
+
+        jQuery.ajax({
+            url: jQuery(this).attr('action'),
+            data: jQuery(this).serialize(),
+            type: 'POST',
+//            dataType: 'json',
+            success: function (response) {
+                jQuery('#_step_wrapper').html(response);
+            },
+            error: function () {
+
+            }
+        });
+        return false;
+    });
+</script>

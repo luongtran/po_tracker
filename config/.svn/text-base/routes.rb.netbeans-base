@@ -1,7 +1,4 @@
 MaterialTracker::Application.routes.draw do
-  resources :questionairre_items
-
-
   resources :groups
   match '*path' => 'application#options_for_mopd', :via => :options
   match '/popv_viewer' => 'sessions#login_as_popv_viewer'
@@ -375,5 +372,4 @@ MaterialTracker::Application.routes.draw do
   match '/:controller(/:action(/:id))'
   match ':controller/:action' => '#index'
   match ':controller' => '#index'
-  post 'save_questionairre_answers' => 'questionairre_items#save_answer'
 end
