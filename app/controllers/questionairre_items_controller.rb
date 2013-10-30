@@ -87,26 +87,35 @@ class QuestionairreItemsController < ApplicationController
   end
 
   def save_answer
-    question = QuestionairreItem.includes(:questionairre_answers).find(params[:questionairre_answer][:questionairre_item_id])
-
+    question = QuestionairreItem.includes(:questionairre_answers).find(params[:question_id])
     if ['text', 'yes_or_no'].include?(question.question_type)
       if question.questionairre_answers.empty?
         QuestionairreAnswer.create(params[:questionairre_answer])
       else
-        # check id match
+        #FIXME check id match
         answer = QuestionairreAnswer.find(params[:questionairre_answer][:id])
         answer.update_attributes(params[:questionairre_answer])
       end
     else
       if question.question_type == 'single_choice'
-
+        answers = params[:answers].values
+        answers.each do |a|
+          if a.has_key?('id')
+            answer = QuestionairreAnswer.find(a[:id])
+            if answer
+              answer.update_attributes a
+            end
+          else
+            question.questionairre_answers.create(a)
+          end
+        end 
       else   # type = multi_choice
 
       end
 
     end
     #FIXME
-    render :nothing => true
+    render :nothing => true, :layout => false
   end
 
 end

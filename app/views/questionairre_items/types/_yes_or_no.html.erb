@@ -7,45 +7,45 @@
 <% answer = questionairre_item.questionairre_answers.first %>
 <div class="field">
   <%= form_for answer, :as => :questionairre_answer, :url => '', :html => {:id => 'questionairre_answer_form', :method => 'POST'} do |f| %>
-      <%= f.hidden_field :questionairre_item_id, :value => questionairre_item.id %>
-      <% if answer %>
-          <%= f.hidden_field :id %>
-          <div style="text-align: center">
-            <label>Yes</label>
-            <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 1, :checked => (answer.answer_yes_or_no_expect) %>
-            <label>No</label>
-            <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 0 ,:checked => !(answer.answer_yes_or_no_expect)%>
-          </div>
-      <% else %>
-          <div style="text-align: center">
-            <label>Yes</label>
-            <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 1, :checked => true %>
-            <label>No</label>
-            <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 0 %>
-          </div>
-      <% end %>
-      <div class="actions" style="text-align: center">
-        <br/>
-        <%= f.submit ' Save ' %>
+    <%= hidden_field_tag :question_id, questionairre_item.id %>
+    <% if answer %>
+      <%= f.hidden_field :id %>
+      <div style="text-align: center">
+        <label>Yes</label>
+        <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 1, :checked => (answer.answer_yes_or_no_expect) %>
+        <label>No</label>
+        <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 0 ,:checked => !(answer.answer_yes_or_no_expect)%>
       </div>
+    <% else %>
+      <div style="text-align: center">
+        <label>Yes</label>
+        <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 1, :checked => true %>
+        <label>No</label>
+        <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 0 %>
+      </div>
+    <% end %>
+    <div class="actions" style="text-align: center">
+      <br/>
+      <%= f.submit ' Save ' %>
+    </div>
   <% end %>
 </div>
 
 <script type="text/javascript">
-    jQuery(function () {
-        jQuery('#questionairre_answer_form').on('submit', function () {
-            jQuery.ajax({
-                url: '/save_questionairre_answers',
-                type: 'POST',
-                data: jQuery(this).serialize(),
-                success: function () {
-                    console.log('success');
-                },
-                error: function () {
-                    alert('An error has occurred');
-                }
-            });
-            return false;
-        });
+  jQuery(function() {
+    jQuery('#questionairre_answer_form').on('submit', function() {
+      jQuery.ajax({
+        url: '/save_questionairre_answers',
+        type: 'POST',
+        data: jQuery(this).serialize(),
+        success: function() {
+          console.log('success');
+        },
+        error: function() {
+          alert('An error has occurred');
+        }
+      });
+      return false;
     });
+  });
 </script>

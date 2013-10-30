@@ -375,5 +375,5 @@ MaterialTracker::Application.routes.draw do
   match '/:controller(/:action(/:id))'
   match ':controller/:action' => '#index'
   match ':controller' => '#index'
-  post 'save_questionairre_answers' => 'questionairre_items#save_answer'
+  post '/save_questionairre_answers' => 'questionairre_items#save_answer'
 end

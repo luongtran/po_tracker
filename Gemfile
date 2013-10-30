@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
-gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p448/gems/linecache19-0.5.13"
+
+#gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p448/gems/linecache19-0.5.13" #temp solution
 gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -14,11 +15,11 @@ group :assets do
   gem 'therubyracer', '0.11.1', :platform => :ruby
 end
 
-gem 'libv8', '~> 3.11.8'
+#gem 'libv8', '~> 3.11.8'
 
 # jQuery is the default JavaScript library in Rails 3.1
 gem 'jquery-rails'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"  #temp solution
 gem 'pothoven-attachment_fu'
 gem "will_paginate", ">= 3.0.pre2"
 
@@ -34,7 +35,7 @@ gem 'ts-datetime-delta', '1.0.2',
 
 gem "test-unit", "~> 2.4.0"
 gem "prototype-rails"
-gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
+gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git' 
 gem 'to-csv'
 gem "comma", "~> 3.0"
 gem 'json','1.7.7'
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'rspec', '~> 2.6'
   gem "factory_girl_rails"
   gem 'meta_request'
+  gem 'quiet_assets'
 end
 
 #gem 'fcgi'
@@ -56,7 +58,7 @@ gem 'vlad'
 # Replaced plugins by these Gems
 gem 'annotate', ">=2.5.0"
 gem "dynamic_form"
-gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'rmagick'
 gem "gruff"
-gem 'object_daddy'
+#gem 'object_daddy'
 

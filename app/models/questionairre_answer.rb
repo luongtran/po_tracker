@@ -5,4 +5,5 @@ class QuestionairreAnswer < ActiveRecord::Base
                   :answer_single_choice_label, :answer_single_choice_expect,
                   :questionairre_item_id
   belongs_to :questionairre_item
+  
 end

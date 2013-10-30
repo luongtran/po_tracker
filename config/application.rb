@@ -15,7 +15,7 @@ module MaterialTracker
 
     config.assets.enabled = true
     config.assets.version = '1.0'
-
+    config.quiet_assets = true
     config.assets.initialize_on_precompile = false
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -27,7 +27,7 @@ module MaterialTracker
     config.autoload_paths += %W(#{Rails.root}/lib)
     config.autoload_paths += Dir["#{Rails.root}/lib/**/"]
 
-   # config.autoload_paths += Dir["#{Rails.root}/app/sweepers"]
+    # config.autoload_paths += Dir["#{Rails.root}/app/sweepers"]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.

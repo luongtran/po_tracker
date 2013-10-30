@@ -1,10 +1,82 @@
 <!--Check require variables -->
-<%= form_for :questionairre_answer, :url => '', :html => {'class' => 'questionairre_answer_form'} do |f| %>
-    <!--<%=   %>-->
-<% end %>
+<div id="_answer_template" style="display: none;"> 
+  <div class="answer_wrapper"> 
+    <%= text_area :content, nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
+    <%= radio_button :choice, nil ,nil, :checked => false, :id => nil , :class => 'answer_expect'%>
+    <button>Delete</button>
+  </div>
+</div>
 
 <p>
-  <b>Answer Expect:</b>
+  <b>Answers:</b>
 </p>
+<br />
+<div class="answers">
+  <form class="questionairre_answers_form">
+    <% if questionairre_item.questionairre_answers.empty? %>
+      <% 2.times do %>
+        <div class="answer_wrapper"> 
+          <%= text_area 'content', nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
+          <%= radio_button 'choice', nil ,nil,:checked => true, :id => nil , :class => 'answer_expect'%>
+          <button>Delete</button>
+        </div>
+      <% end %>
+
+    <% else %>
+      <% questionairre_item.questionairre_answers.each do |a|   %>
+        <div class="answer_wrapper"> 
+          <%= hidden_field_tag :id, a.id, :class => 'answer_id' %>
+          <%= text_area 'content', nil, :value => a.answer_single_choice_label ,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
+          <%= radio_button 'choice', nil ,nil,:checked => a.answer_single_choice_expect, :id => nil , :class => 'answer_expect'%>
+          <button class="delete-button">Delete</button>
+        </div>
+      <% end %>
+    <% end %>
+  </form>
+</div>
+<div style="text-align: center;">
+  <button class="button" id="_add_more_answer"> Add </button> 
+  <button class="button" id="_save_answers"> Save </button> 
+</div>
 
 <br/>
+<script type="text/javascript">
+  jQuery(function() {
+    jQuery('#_add_more_answer').on('click', function() {
+      html = jQuery('#_answer_template').html();
+      jQuery('.questionairre_answers_form').append(html);
+    });
+
+    jQuery('#_save_answers').on('click', function() {
+      var dataSend = {};
+      dataSend['question_id'] = '<%= questionairre_item.id %>';
+      dataSend['answers'] = {};
+      var answers = jQuery('.questionairre_answers_form .answer_wrapper');
+      for (i = 0; i < answers.length; i++) {
+        var obj = {};
+        if (jQuery(answers[i]).children('.answer_id').length !== 0) { //not exist
+          obj['id'] = jQuery(answers[i]).children('.answer_id').val();
+        }
+        obj['answer_single_choice_label'] = jQuery(answers[i]).children('.answer_content').val();
+        obj['answer_single_choice_expect'] = jQuery(answers[i]).children('.answer_expect').is(':checked');
+        dataSend['answers'][i] = obj;
+      }
+
+      jQuery.ajax({
+        url: '/save_questionairre_answers',
+        type: 'POST',
+        data: dataSend,
+        success: function() {
+          console.log('successed');
+        }
+
+      });
+    });
+
+    jQuery('.delete-button').on('click', function() {
+        return false;
+    });
+
+  });
+
+</script> 

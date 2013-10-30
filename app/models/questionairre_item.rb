@@ -4,6 +4,7 @@ class QuestionairreItem < ActiveRecord::Base
 
   has_many :vendor_answers
   has_many :questionairre_answers
+ # accepts_nested_attributes_for :questionairre_answers #, :reject_if => lambda { |a| a[:content].blank? } , :allow_destroy => true
   has_and_belongs_to_many :vendors, :join_table => "vendor_questionairres"
   validates_presence_of :question, :question_type
 
