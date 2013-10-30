@@ -25,7 +25,7 @@ class Unit < ActiveRecord::Base
   
 
 	# Using ThinkingSphinx now... (Adam - 2009-06-18)    
-    # acts_as_ferret :fields => [:description]
+   # acts_as_ferret :fields => [:description]  # for rebuild_index, 011_create_indeces
     acts_as_log_edits
   
     has_many :orders

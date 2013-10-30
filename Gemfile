@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-
+gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-p448/gems/linecache19-0.5.13"
 gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -42,20 +42,20 @@ gem 'exception_notification'
 gem 'thin'
 
 group :development, :test do
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
   gem 'rspec-rails', '~> 2.6.1.beta1'
   gem 'rspec', '~> 2.6'
   gem "factory_girl_rails"
 end
 
-gem 'fcgi'
+#gem 'fcgi'
 gem 'rake'
 gem 'vlad'
 
 # Replaced plugins by these Gems
 gem 'annotate', ">=2.5.0"
 gem "dynamic_form"
-gem "rmagick"
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 gem "gruff"
 gem 'object_daddy'
 

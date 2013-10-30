@@ -102,7 +102,6 @@ class RecordChangelog < ActiveRecord::Base
 			}.merge(options))
 		end
 	end
-
 	def self.record_deletion(obj, options = {})
 		if @@enable_recording
 			self.create!({

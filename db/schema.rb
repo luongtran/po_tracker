@@ -667,10 +667,6 @@ ActiveRecord::Schema.define(:version => 20131024004146) do
     t.string   "modified_by"
     t.text     "comment"
     t.integer  "record_id"
-    t.string   "attachment_file_name"
-    t.string   "attachment_content_type"
-    t.integer  "attachment_file_size"
-    t.datetime "attachment_updated_at"
   end
 
   create_table "reference_number_types", :force => true do |t|
@@ -680,7 +676,7 @@ ActiveRecord::Schema.define(:version => 20131024004146) do
     t.datetime "updated_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.boolean  "default",      :default => false
+    t.boolean  "default"
   end
 
   create_table "reminders", :force => true do |t|

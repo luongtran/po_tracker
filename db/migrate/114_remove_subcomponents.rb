@@ -1,6 +1,6 @@
 class RemoveSubcomponents < ActiveRecord::Migration
   def self.up
-    
+  
     #delete the piping subcomponents from PIPE
     #rename "BRANCH CONN" to "BRANCH CONNECTIONS"
     pipe = PipingComponent.find_by_piping_component("PIPE")
@@ -30,40 +30,40 @@ class RemoveSubcomponents < ActiveRecord::Migration
     @components.each do |comp|
       if(comp.piping_subcomponents.size > 0)
         
-          #puts "component: #{comp.piping_component}"
+        #puts "component: #{comp.piping_component}"
           
-          new_components = []
-          #create a new piping component for each piping subcomponent related to it
-          comp.piping_subcomponents.each do |subcomp|
-            #change this to create!
-            ns = PipingComponent.create(:piping_component => subcomp.description.upcase)
-            new_components << ns
-            #puts "#{y ns}"
+        new_components = []
+        #create a new piping component for each piping subcomponent related to it
+        comp.piping_subcomponents.each do |subcomp|
+          #change this to create!
+          ns = PipingComponent.create(:piping_component => subcomp.description.upcase)
+          new_components << ns
+          #puts "#{y ns}"
+          icount += 1
+          #if(icount % 1000 == 0)
+          #    puts "#{icount} done"
+          #  end
+        end
+          
+        pcds = PipingClassDetail.find_all_by_piping_component_id(comp.id)
+        pcds.each do |detail|
+          new_components.each do |new_sub|
+            #duplicate the piping class detail for each new piping component
+            p = PipingClassDetail.new(:attributes => detail.attributes)
+            p.piping_component = new_sub
+            p.save!
+            detail.piping_notes.each do |note|
+              p.piping_notes << note
+            end
+                  
             icount += 1
             #if(icount % 1000 == 0)
-            #    puts "#{icount} done"
-            #  end
+            #  puts "#{icount} done"
+            #end
           end
+        end
           
-          pcds = PipingClassDetail.find_all_by_piping_component_id(comp.id)
-          pcds.each do |detail|
-            new_components.each do |new_sub|
-              #duplicate the piping class detail for each new piping component
-              p = PipingClassDetail.new(:attributes => detail.attributes)
-              p.piping_component = new_sub
-              p.save!
-              detail.piping_notes.each do |note|
-                p.piping_notes << note
-              end
-                  
-              icount += 1
-              #if(icount % 1000 == 0)
-              #  puts "#{icount} done"
-              #end
-            end
-          end
-          
-          #declare victory
+        #declare victory
       end #end if(comp.)
     end #end @components.each
     puts "#{icount} new pipingcomponents created"

@@ -18,7 +18,7 @@
 
 class Company < ActiveRecord::Base
   # Using ThinkingSphinx now... (Adam - 2009-06-18)
-  # acts_as_ferret :fields => [:name]
+  #acts_as_ferret :fields => [:name]
   acts_as_log_edits
 
   extend Listable::ModelHelper

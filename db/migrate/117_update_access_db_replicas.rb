@@ -7,7 +7,6 @@ class UpdateAccessDbReplicas < CreateAccessDbReplicas
     self.convert_piping_classes
     self.convert_piping_notes
     self.convert_piping_components
-    
 
     self.convert_general_notes
     self.convert_valve_components
@@ -70,7 +69,7 @@ class UpdateAccessDbReplicas < CreateAccessDbReplicas
           #change this to create!
           ns = PipingComponent.create(:piping_component => subcomp.upcase)
           new_components << ns
-          puts "#{y ns}"
+         # puts "#{y ns}"
           icount += 1
           
         end
@@ -92,7 +91,7 @@ class UpdateAccessDbReplicas < CreateAccessDbReplicas
         
         #declare victory
     end #end @components.each
-    puts "#{icount} new PipingComponents created"    
+    #puts "#{icount} new PipingComponents created"    
   end
   
   

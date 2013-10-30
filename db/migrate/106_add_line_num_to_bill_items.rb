@@ -1,5 +1,6 @@
 class AddLineNumToBillItems < ActiveRecord::Migration
   def self.up
+    
   	add_column :bill_items, :line_num, :integer
   	
   	Bill.find(:all).each do |bill|
@@ -14,6 +15,7 @@ class AddLineNumToBillItems < ActiveRecord::Migration
   end
 
   def self.down
+#
   	remove_column :bill_items, :line_num
   end
 end

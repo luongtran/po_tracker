@@ -82,9 +82,9 @@ class POPVImportData < ActiveRecord::Migration
 		self.convert_all 
 		
 		#4. delete the temporary data
-		self.down_tables 
+		# self.down_tables 
 		
-		RecordChangelog.enable_recording = true
+	#	RecordChangelog.enable_recording = true
 	end
 	
 	def self.down

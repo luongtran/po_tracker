@@ -38,7 +38,8 @@ require 'digest/sha1'
 
 class Employee < ActiveRecord::Base
   # Using ThinkingSphinx now... (Adam - 2009-06-18)
-  # acts_as_ferret :fields => [:badge_no, :last_name, :first_name, :mi, :login, :email, :telephone]
+
+  #acts_as_ferret :fields => [:badge_no, :last_name, :first_name, :mi, :login, :email, :telephone] # for rebuild_index, 011_create_indeces
 
   #states_for :role => [ "Admin", "Warehouse", "Purchasing", "Planning", "Requesting", "Warehouse Admin", "Vendor",
   # "Receiving", "Foreman", "Engineer", "Estimator", "Requesting Admin", "POPV Admin", "POPV Viewer"]
