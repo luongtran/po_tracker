@@ -1,9 +1,9 @@
 <!--Check require variables -->
 <div id="_answer_template" style="display: none;"> 
   <div class="answer_wrapper"> 
-    <%= text_area :content, nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
     <%= radio_button :choice, nil ,nil, :checked => false, :id => nil , :class => 'answer_expect'%>
-    <button>Delete</button>
+    <%= text_area :content, nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' , :required => true%>
+    <a class="delete-button"><%= image_tag "img/silk/icons/delete.png"%> </a>
   </div>
 </div>
 
@@ -16,40 +16,101 @@
     <% if questionairre_item.questionairre_answers.empty? %>
       <% 2.times do %>
         <div class="answer_wrapper"> 
-          <%= text_area 'content', nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
           <%= radio_button 'choice', nil ,nil,:checked => true, :id => nil , :class => 'answer_expect'%>
-          <button>Delete</button>
+          <%= text_area 'content', nil,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' , :required => true %>
+
+          <a class="delete-button"><%= image_tag "img/silk/icons/delete.png"%></a>
         </div>
       <% end %>
-
     <% else %>
       <% questionairre_item.questionairre_answers.each do |a|   %>
         <div class="answer_wrapper"> 
           <%= hidden_field_tag :id, a.id, :class => 'answer_id' %>
-          <%= text_area 'content', nil, :value => a.answer_single_choice_label ,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content' %>
           <%= radio_button 'choice', nil ,nil,:checked => a.answer_single_choice_expect, :id => nil , :class => 'answer_expect'%>
-          <button class="delete-button">Delete</button>
+          <%= text_area 'content', nil, :value => a.answer_single_choice_label ,:id => nil ,:rows => 2, :cols => 60, :class => 'answer_content', :required => true %>
+          <a class="delete-button"><%= image_tag "img/silk/icons/delete.png"%> </a>
         </div>
       <% end %>
     <% end %>
   </form>
 </div>
 <div style="text-align: center;">
-  <button class="button" id="_add_more_answer"> Add </button> 
-  <button class="button" id="_save_answers"> Save </button> 
+  <button class="" id="_add_more_answer"> + Add </button> 
+  <button class="" id="_save_answers"> Save </button> 
+  <div class=""> 
+    <span class="loading-indicator" style='display: none;'>
+
+    </span>
+    <br />
+    <span class="notifier">
+    </span>
+  </div>
 </div>
 
 <br/>
 <script type="text/javascript">
   jQuery(function() {
+    function reloadDeleteButton() {
+      jQuery('.questionairre_answers_form .delete-button').on('click', function() {
+        var answers = jQuery('.questionairre_answers_form .answer_wrapper');
+
+        var _this = jQuery(this);//delete button
+        if (answers.length > 2) {
+          if (jQuery(this).parent().children('.answer_id').length === 0) {
+            _this.parent().remove();
+          }
+          else { // delete saved answer
+            for (i = 0; i < answers.length; i++) {
+              if (jQuery(answers[i]).children('.answer_id').length === 0) {
+                jQuery('.notifier').html('<p style="color: darkred"> You must Save the new answers before delete this answers</p>');
+                return false;
+              }
+            }
+
+            var answer_id = jQuery(this).parent().children('.answer_id').val();
+            var question_id = '<%= questionairre_item.id %>';
+            jQuery.ajax({
+              url: '/delete_answer',
+              type: 'post',
+              data: {'answer_id': answer_id, 'question_id': question_id},
+              success: function(response) {
+                if (response['success']) {
+                  _this.parent().remove();
+                } else {
+                  jQuery('.notifier').html('<p style="color: darkred">' + response['message'] + '</p>');
+                }
+              }
+            });
+          }
+
+        } else {
+          jQuery('.notifier').html('<p style="color: darkred">Can\'t delete this answer. Number of answers must be at least 2.</p>');
+        }
+        return false;
+
+
+      });
+    }
+    reloadDeleteButton();
+
     jQuery('#_add_more_answer').on('click', function() {
       html = jQuery('#_answer_template').html();
       jQuery('.questionairre_answers_form').append(html);
+      reloadDeleteButton();
     });
 
     jQuery('#_save_answers').on('click', function() {
+      // Validate
+      var contents = jQuery('.questionairre_answers_form .answer_wrapper .answer_content');
+      for (i = 0; i < contents.length; i++) {
+        if (jQuery(contents[i]).val().trim().length === 0) {
+          jQuery('.notifier').html('<p style="color: darkred"> The answer content can\'t leave blank. </p>');
+          return;
+        }
+      }
+
+      //Data Ready
       var dataSend = {};
-      dataSend['question_id'] = '<%= questionairre_item.id %>';
       dataSend['answers'] = {};
       var answers = jQuery('.questionairre_answers_form .answer_wrapper');
       for (i = 0; i < answers.length; i++) {
@@ -61,21 +122,37 @@
         obj['answer_single_choice_expect'] = jQuery(answers[i]).children('.answer_expect').is(':checked');
         dataSend['answers'][i] = obj;
       }
+      //data for question
+      dataSend['question'] = {};
+      dataSend['question']['id'] = '<%= questionairre_item.id %>';
 
+      dataSend['question']['question'] = jQuery('.edit-questionairre-item-form .question-content').val();
+
+      jQuery('.notifier').html('<p style=""> Saving ...</p>');
+      jQuery('.loading-indicator').show();
       jQuery.ajax({
         url: '/save_questionairre_answers',
         type: 'POST',
         data: dataSend,
-        success: function() {
-          console.log('successed');
-        }
+        success: function(response) {
+          if (response['success']) {
+            jQuery('#answers_area').fadeOut(100, function() {
+              jQuery(this).html(response['html']).fadeIn(100);
+            })
+          } else {
+            jQuery('.notifier').html('<p style="color: darkred">' + response['message'] + '</p>');
+          }
+        },
+        error: function() {
+          jQuery('.notifier').html('<p style="color: darkred">Save failed. An error has occurred.</p>');
+        },
+        complete: function() {
+          jQuery('.loading-indicator').hide();
 
+        }
       });
     });
 
-    jQuery('.delete-button').on('click', function() {
-        return false;
-    });
 
   });
 

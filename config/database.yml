@@ -5,7 +5,7 @@ development:
   database: po_tracker
   pool: 5
   username: root
-  password: '123456'
+  password: 'Htlu@n2605'
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -18,5 +18,5 @@ test:
   database: po_tracker_test
   pool: 5
   username: root
-  password: '123456'
+  password: 'Htlu@n2605'
   host: localhost

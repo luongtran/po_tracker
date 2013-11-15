@@ -5,11 +5,10 @@
 <br/>
 
 <% answer = questionairre_item.questionairre_answers.first %>
-<div class="field">
-  <%= form_for answer, :as => :questionairre_answer, :url => '', :html => {:id => 'questionairre_answer_form', :method => 'POST'} do |f| %>
-    <%= hidden_field_tag :question_id, questionairre_item.id %>
+<div class="answer_wrapper">
+  <%= form_for answer, :as => :questionairre_answer, :url => '', :html => {:class => 'questionairre_answers_form', :method => 'POST'} do |f| %>
     <% if answer %>
-      <%= f.hidden_field :id %>
+      <%= f.hidden_field :id  , :id => 'answer_id' %>
       <div style="text-align: center">
         <label>Yes</label>
         <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 1, :checked => (answer.answer_yes_or_no_expect) %>
@@ -24,25 +23,58 @@
         <%= radio_button :questionairre_answer, :answer_yes_or_no_expect, 0 %>
       </div>
     <% end %>
-    <div class="actions" style="text-align: center">
-      <br/>
-      <%= f.submit ' Save ' %>
-    </div>
-  <% end %>
-</div>
 
+  <% end %>
+</div> 
+<div style="text-align: center;">
+  <br />
+  <button class="" id="_save_answers"> Save </button> 
+  <div class=""> 
+    <span class="loading-indicator" style='display: none;'>
+
+    </span>
+    <br />
+    <span class="notifier">
+    </span>
+  </div>
+</div>
 <script type="text/javascript">
   jQuery(function() {
-    jQuery('#questionairre_answer_form').on('submit', function() {
+    jQuery('#_save_answers').on('click', function() {
+
+      dataSend = {};
+      //data for question
+      dataSend['question'] = {};
+      dataSend['question']['id'] = '<%= questionairre_item.id %>';
+      dataSend['question']['question'] = jQuery('.edit-questionairre-item-form .question-content').val();
+
+      //data for answer
+      dataSend['answer'] = {};
+      if (jQuery('.questionairre_answers_form #answer_id').length !== 0) {
+        dataSend['answer']['id'] = jQuery('.questionairre_answers_form #answer_id').val();
+      }
+      dataSend['answer']['answer_yes_or_no_expect'] = jQuery('.questionairre_answers_form input:radio[name="questionairre_answer[answer_yes_or_no_expect]"]:first').is(':checked')
+
+      jQuery('.notifier').html('<p style=""> Saving ...</p>');
+      jQuery('.loading-indicator').show();
       jQuery.ajax({
         url: '/save_questionairre_answers',
         type: 'POST',
-        data: jQuery(this).serialize(),
-        success: function() {
-          console.log('success');
+        data: dataSend,
+        success: function(response) {
+          if (response['success']) {
+            jQuery('#answers_area').fadeOut(100, function() {
+              jQuery(this).html(response['html']).fadeIn(100);
+            })
+          } else {
+            jQuery('.notifier').html('<p style="color: darkred">' + response['message'] + '</p>');
+          }
         },
         error: function() {
-          alert('An error has occurred');
+          jQuery('.notifier').html('<p style="color: darkred">Save failed. An error has occurred.</p>');
+        },
+        complete: function() {
+          jQuery('.loading-indicator').hide();
         }
       });
       return false;

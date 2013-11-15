@@ -1,17 +1,21 @@
-<div style='max-width: 460px;padding:7px;border: 1px solid #eee;'>
-  <p>
-    <b>Question:</b>
-    <%= @questionairre_item.question %>
-  </p>
-  <br/>
 
+<div style='max-width: 440px;padding:7px;border: 1px solid #eee;' id='question-answer-wrapper'>
   <p>
     <b>Type:</b>
-    <%= @questionairre_item.question_type %>
+    <%= @questionairre_item.question_type.gsub('_', ' ').capitalize %>
   </p>
   <br/>
-
+  <p>
+    <%= form_for(@questionairre_item , :id => nil, :html => {:class => 'edit-questionairre-item-form' }) do |f| %>
+    <p> <b>Question:</b> </p>
+    <br />
+    <%= f.text_area :question ,:rows => 2, :cols => 70, :class => 'question-content' %>
+  <% end %>
+</p>
+<br/>
+<div id="answers_area">
   <%= render :partial => "questionairre_items/types/#{@questionairre_item.question_type}", :locals => {:questionairre_item => @questionairre_item} %>
+</div> 
 </div>
 
 <%= link_to 'Back', questionairre_items_path %>

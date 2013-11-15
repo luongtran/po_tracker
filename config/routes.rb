@@ -1,6 +1,7 @@
 MaterialTracker::Application.routes.draw do
   resources :questionairre_items
-
+  post '/save_questionairre_answers' => 'questionairre_items#save_answer'
+  post '/delete_answer' => 'questionairre_items#delete_answer'
 
   resources :groups
   match '*path' => 'application#options_for_mopd', :via => :options
@@ -375,5 +376,5 @@ MaterialTracker::Application.routes.draw do
   match '/:controller(/:action(/:id))'
   match ':controller/:action' => '#index'
   match ':controller' => '#index'
-  post '/save_questionairre_answers' => 'questionairre_items#save_answer'
+
 end

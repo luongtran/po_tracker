@@ -1,6 +1,33 @@
 <h1>Editing questionairre_item</h1>
 
-<%= render 'form' %>
+<%= form_for(@questionairre_item) do |f| %>
+  <% if @questionairre_item.errors.any? %>
+    <div id="error_explanation" style="color:darkred; padding:7px;border: 1px solid #eee;max-width: 242px;">
+      <ul>
+        <% @questionairre_item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <br/>
+  <% end %>
+  <div class="field">
+    <%= f.label "Question: " %>
+    <br/>
+    <%= f.text_area :question, :rows => 5 , :required => true%>
+  </div>
+  <div class="field">
+    <br/>
+
+    <%= f.label @questionairre_item.question_type %>
+    <%# choices = @types.map { |type| [type.gsub('_', ' ').capitalize, type] } %>
+    <%#= f.select :question_type, choices %>
+  </div>
+  <div class="actions" style="text-align: center">
+    <br/>
+    <%= f.submit ' Save ' %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @questionairre_item %> |
 <%= link_to 'Back', questionairre_items_path %>

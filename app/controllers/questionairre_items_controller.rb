@@ -33,6 +33,7 @@ class QuestionairreItemsController < ApplicationController
   # GET /questionairre_items/1/edit
   def edit
     @questionairre_item = QuestionairreItem.find(params[:id])
+    
   end
 
   # POST /questionairre_items
@@ -41,7 +42,6 @@ class QuestionairreItemsController < ApplicationController
     @questionairre_item = QuestionairreItem.new(params[:questionairre_item])
     respond_to do |format|
       if @questionairre_item.save
-
         ## To step 2
         #format.html {
         #  render :partial => "step2",
@@ -73,7 +73,6 @@ class QuestionairreItemsController < ApplicationController
       end
     end
   end
-
   # DELETE /questionairre_items/1
   # DELETE /questionairre_items/1.json
   def destroy
@@ -87,35 +86,58 @@ class QuestionairreItemsController < ApplicationController
   end
 
   def save_answer
-    question = QuestionairreItem.includes(:questionairre_answers).find(params[:question_id])
+    
+    question_id = params[:question][:id]
+    question = QuestionairreItem.includes(:questionairre_answers).find(params[:question][:id])
+    params[:question].delete(:id)
+    question.update_attributes params[:question]
     if ['text', 'yes_or_no'].include?(question.question_type)
       if question.questionairre_answers.empty?
-        QuestionairreAnswer.create(params[:questionairre_answer])
+        question.questionairre_answers.create(params[:answer])
       else
         #FIXME check id match
-        answer = QuestionairreAnswer.find(params[:questionairre_answer][:id])
-        answer.update_attributes(params[:questionairre_answer])
+        answer = QuestionairreAnswer.find(params[:answer][:id])
+        answer.update_attributes(params[:answer])
       end
     else
-      if question.question_type == 'single_choice'
-        answers = params[:answers].values
-        answers.each do |a|
-          if a.has_key?('id')
-            answer = QuestionairreAnswer.find(a[:id])
-            if answer
-              answer.update_attributes a
-            end
-          else
-            question.questionairre_answers.create(a)
+      answers = params[:answers].values
+      #FIXME,validate only one of answers is true
+      answers.each do |a|
+        if a.has_key?('id')
+          answer = QuestionairreAnswer.find(a[:id])
+          if answer
+            answer.update_attributes a
           end
-        end 
-      else   # type = multi_choice
-
-      end
-
+        else
+          question.questionairre_answers.create(a)
+        end
+      end 
     end
-    #FIXME
-    render :nothing => true, :layout => false
+    #reload eager
+    @question = QuestionairreItem.includes(:questionairre_answers).find(question_id)
+    response = {}
+    response['success'] = true
+    response[:html] = render_to_string(:partial => "questionairre_items/types/#{@question.question_type}", :locals => {:questionairre_item => @question}).html_safe
+    render :json => response.to_json()
   end
+  
+  def delete_answer
+    response = {}
+    response['success'] = true
+    begin
+      question = QuestionairreItem.includes(:questionairre_answers).find(params[:question_id])
+      answer = question.questionairre_answers.find(params[:answer_id])
+      if(question.questionairre_answers.count > 2) #ensure
+        answer.destroy 
+      else
+        response['success'] = false
+        response['message'] = 'Can\'t delete this answer. Number of answers must be at least 2.'
+      end
+    rescue ActiveRecord::RecordNotFound => e
+      response['success'] = false
+    ensure
+      render :json => response.to_json()
+    end
 
+  end
 end
