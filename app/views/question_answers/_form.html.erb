@@ -1,0 +1,47 @@
+<%= form_tag question_question_answers_path(@question),  :class => "edit full", :remote => true  do  %>
+
+<div class="left" id="form_question_answer">
+  <% for i in 1..4 do %>
+	  <div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+		  <p>
+		    <label>Answer <%= i %><span class="<%= i <= 2 ? 'required' : '' %>"><%= i <= 2 ? "(required)" : "" %></span></label>
+		    <%= text_area :answers, "", :class => "text", :required => (i <= 2 ? true : false), :rows => 5, :cols => 30 %>
+		  </p>
+	  </div>
+ <% end %>
+  
+  <%= hidden_field_tag :number_answer, 4 %>
+  
+  
+</div>
+<p>
+  	<%= img_button "Add", "add.png", "#", :id => "add_answer" %>
+</p>
+<p class="menu noprint clear">
+  <%= submit_tag "Save Answer", :class => "submit" %> or 
+  
+</p>
+
+<% end %>
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		jQuery('#number_answer').val(4);
+		jQuery("#add_answer").click(function() {
+			var number_answer = parseInt(jQuery("#number_answer").val()) + 1;
+			console.log(number_answer);
+			jQuery('#number_answer').val(number_answer);
+			var html = ""
+			if(number_answer % 2 != 0) {
+				html += '<div class="left">'
+			} else {
+				html += '<div class="right">'
+			}
+			
+			html += ('<p> <label>Answer ' + number_answer + '<label><textarea name="answers[]" class="text" cols ="30" rows="5" ></textarea> </p> </div>'); 
+			
+			jQuery("#form_question_answer").append(html);
+		});
+	});
+</script>
+

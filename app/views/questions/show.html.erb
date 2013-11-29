@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		var question_id = "<%= @question.id %>";
+		jQuery('.delete_answer').on('click', function() {
+			var id = jQuery(this).parent().parent('.answer_wrapper').children('.question_answer_id').val();
+			var current_obj = this;
+			jQuery.ajax({
+				url: '/questions/' + question_id + '/question_answers/' + id,
+				type: "DELETE",
+				success: function(response) {
+					var success = response.success
+					if(success = true || success == "true") {
+						jQuery(current_obj).parent().parent('.answer_wrapper').remove();
+					}
+					console.log(response);
+				}
+			});
+		});
+	});
+</script>
+<div class="question_area">
+	<p>
+	  <b>Question: </b>
+	  <%=h @question.question %>
+	</p>
+	<p>
+	  <b>Question Type: </b>
+	  <%=h @question.question_type %>
+	</p>
+</div>
+<hr/>
+<% if @question.need_create_answers %>
+	<div class="form" id="answers_area">
+		
+		<% 
+		@question_answers = @question.question_answers.order
+		if @question_answers.count > 0
+		%>
+		<h1>
+			<b>Answers</b>
+		</h1>
+		<%= render "question_answers/question_answers" %>
+		<% else %>
+		<h1>
+			Create Answers
+		</h1>
+		<%= render "question_answers/form" %>
+		<% end %>
+		
+	</div>
+<% end %>
+<hr/>
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

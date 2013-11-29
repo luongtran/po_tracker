@@ -21,6 +21,7 @@
 #  lock_version      :integer(4)    default(0)
 #  updated_at        :datetime      
 #  access_key        :string(255)   
+#  certified_until   :date
 #
 
 require 'digest/sha1'
@@ -46,9 +47,9 @@ class Vendor < ActiveRecord::Base
   has_many :orders
   has_and_belongs_to_many :vendor_groups
   
-  has_many :vendor_answers
+  has_many :vendor_questionnaire_answers
   
-  has_and_belongs_to_many :questionairre_items, :join_table => "vendor_questionairres"
+  has_many :vendor_questionnaires
 
   ############################################################################
   # INDEXING

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030084833) do
+ActiveRecord::Schema.define(:version => 20131129083913) do
 
   create_table "admin_messages", :force => true do |t|
     t.string   "text"
@@ -604,22 +604,32 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
 
   add_index "purchase_orders", ["created"], :name => "index_purchase_orders_on_created"
 
-  create_table "questionairre_answers", :force => true do |t|
-    t.integer  "questionairre_item_id"
-    t.text     "answer_text"
-    t.boolean  "answer_yes_or_no_expect"
-    t.string   "answer_multi_choice_label"
-    t.boolean  "answer_multi_choice_expect"
-    t.string   "answer_single_choice_label"
-    t.boolean  "answer_single_choice_expect"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+  create_table "question_answers", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "answer"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "questionairre_items", :force => true do |t|
-    t.integer  "order"
+  create_table "questionnaires", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "questionnaires_questions", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "questionnaire_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "questions", :force => true do |t|
     t.string   "question"
     t.string   "question_type"
+    t.boolean  "active"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -679,6 +689,10 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
     t.string   "modified_by"
     t.text     "comment"
     t.integer  "record_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "reference_number_types", :force => true do |t|
@@ -688,7 +702,7 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
     t.datetime "updated_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.boolean  "default"
+    t.boolean  "default",      :default => false
   end
 
   create_table "reminders", :force => true do |t|
@@ -730,6 +744,19 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "signatures", :force => true do |t|
+    t.integer  "employee_id"
+    t.string   "text"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "signature_image_file_name"
+    t.string   "signature_image_content_type"
+    t.integer  "signature_image_file_size"
+    t.datetime "signature_image_updated_at"
+    t.text     "sign"
+    t.integer  "vendor_questionnaire_id"
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer "taggable_id"
@@ -844,15 +871,6 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
 
   add_index "valves_valve_components", ["valve_id", "valve_component_id"], :name => "index_valves_valve_components_on_valve_id_and_valve_component_id"
 
-  create_table "vendor_answers", :force => true do |t|
-    t.integer  "questionairre_item_id"
-    t.date     "questionairre_date"
-    t.integer  "vendor_id"
-    t.text     "answer"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-  end
-
   create_table "vendor_bill_items", :force => true do |t|
     t.integer "bill_id"
     t.integer "bill_item_id"
@@ -873,14 +891,35 @@ ActiveRecord::Schema.define(:version => 20131030084833) do
     t.integer "vendor_group_id"
   end
 
-  create_table "vendor_questionairre_approvals", :id => false, :force => true do |t|
-    t.integer "vendor_id"
-    t.integer "questionairre_item_id"
+  create_table "vendor_questionnaire_answers", :force => true do |t|
+    t.integer  "vendor_id"
+    t.integer  "question_id"
+    t.integer  "question_answer_id"
+    t.text     "answer"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "vendor_questionnaire_id"
   end
 
-  create_table "vendor_questionairres", :id => false, :force => true do |t|
-    t.integer "vendor_id"
-    t.integer "questionairre_item_id"
+  create_table "vendor_questionnaire_approvals", :force => true do |t|
+    t.integer  "vendor_questionnaire_id"
+    t.integer  "approver"
+    t.integer  "signature_id"
+    t.text     "approval_status"
+    t.text     "comment"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "approval_step"
+  end
+
+  create_table "vendor_questionnaires", :force => true do |t|
+    t.integer  "vendor_id"
+    t.integer  "questionnaire_id"
+    t.integer  "approval_step"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.integer  "vendor_questionnaire_approval_id"
+    t.string   "approval_status"
   end
 
   create_table "vendors", :force => true do |t|

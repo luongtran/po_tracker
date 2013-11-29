@@ -1,0 +1,45 @@
+<% if @vendor_questionnaire.approval_step == @next_status %>
+<div class="conversation">
+	<% if !@vendor_questionnaire_approval.nil? %>
+		<p><b>Approval conversation:</b></p>
+		<%= @vendor_questionnaire_approval.comment %>
+		<p><b>Approval Status: </b></p>
+		<%= @vendor_questionnaire_approval.approval_status %>
+	<% end %>
+</div>
+<% end %>
+<div class="<%= @vendor_questionnaire.approval_step == @next_status ? 'sigPaded' : 'sigPad' %>">
+	<label><b><%= @text %></b></label>
+	<ul class="sigNav">
+		<li class="drawIt"><a href="#draw-it" class="current">Draw It</a></li>
+	    <li class="clearButton"><a href="#clear">Clear</a></li>
+	</ul>
+	<div class="sig sigWrapper">
+	    <div class="typed"></div>
+	    <canvas class="pad" width="398" height="80"></canvas>
+	    <%= hidden_field_tag "vendor_signature_#{@vendor_questionnaire.approval_step}", "", :class => "output" %>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+		var status = parseInt("<%= @vendor_questionnaire.approval_step %>");
+		var next_status = parseInt("<%= @next_status %>");
+		
+		if(status > 2 && status == next_status) {
+			var sign =  JSON.parse('<%= raw @sign %>');
+			console.log(sign);
+			jQuery('.sigPaded').each( function(i, obj) {
+				console.log(obj);
+				if(!jQuery(obj).hasClass('assigned')) {
+					console.log('test');
+					jQuery(obj).addClass('assigned');
+					jQuery(obj).signaturePad({displayOnly:true}).regenerate(sign);
+				} 
+			});
+			
+		} else {
+			jQuery('.sigPad').signaturePad({drawOnly:true});
+		}
+	
+</script>

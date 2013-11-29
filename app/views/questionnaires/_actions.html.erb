@@ -1,0 +1,6 @@
+<li><%= img_button "Create a New Questionnaire", "add.png", new_questionnaire_path %></li>
+<li><%= img_button "Questions by ID", "vendor.png", questionnaires_path %></li>
+<li><%= img_button_function("Print", "print.png", "window.print()") %></li>
+<% if params[:action] == "edit" || params[:action] == "new" %>
+  <li><%= img_button_function("Save Entry", "save.png", "$('#{form_id(@questionnaire)}').submit()") %></li>
+<% end %>

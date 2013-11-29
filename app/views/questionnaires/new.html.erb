@@ -1,0 +1,167 @@
+<style type="text/css">
+	#questionnaire_creating {
+		width:49%;
+		float:left;
+		min-height:50px;
+		
+	}
+	
+	#questions {
+		width:49%;
+		float:left;
+		border-left: solid 1px;
+		padding-left: 10px;
+		height:400px;
+		overflow-y: scroll;
+	}
+	
+	 .left {
+		width:20%;
+		float:left;
+	}
+	
+	 .right {
+		width:20%;
+		float:left;
+	}
+	.row {
+		border-bottom: solid 1px;
+		padding:10px;
+	}
+	.action {
+		float:right;
+	}
+	#new_questionnaire .actions {
+		margin-top: 20px;
+		float:right;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		var edit_link = '<%= img_button "Remove", "delete.png", "#", :class => "remove_question" %>';
+		var choose_link = '<%= img_button "Choose", "add.png", "#", :class => "choose_question" %>'
+		jQuery('.choose_question').on('click', function() {
+			var question_id = jQuery(this).parent().parent('.action').children('.question_id').val();
+			var question_ids = jQuery('#question_ids').val();
+			if(question_ids == "" || question_ids == null) {
+				question_ids = question_id;
+			} else {
+				question_ids += ("," + question_id);
+			}
+			jQuery('#question_ids').val(question_ids);
+			var root_node = jQuery(this).parent().parent().parent().parent('.row');
+			var action_node = jQuery(this).parent().parent('.action');
+			jQuery(action_node).empty();
+			
+			jQuery(action_node).prepend(edit_link);
+			var html = '<div class="row">' + jQuery(root_node).html() + "</div>";
+			
+			jQuery('#questionnaire_questions').append(html);
+			jQuery(root_node).remove();
+		});
+		
+		jQuery(".remove_question").on('click', function() {
+			var root_node = jQuery(this).parent().parent().parent().parent('.row');
+			var action_node = jQuery(this).parent().parent('.action');
+			jQuery(action_node).empty();
+			
+			jQuery(action_node).prepend(choose_link);
+			var html = '<div class="row">' + jQuery(root_node).html() + "</div>";
+			
+			jQuery('#list_questions').prepend(html);
+			jQuery(root_node).remove();
+		});
+		
+	});
+</script>
+
+<div id="questionnaire">
+	<div id="questionnaire_creating">
+		<h1>
+			<b>Questionnaire</b>
+			
+		</h1>
+		<%= form_for @questionnaire, :class => "edit full", :remote => true, :method => "POST" do |f| %>
+		  <div class="field">
+		  	<p><label><b>Title</b></label></p>
+		  	<%= f.text_field :title %>
+	  	  </div>
+			
+			<%= hidden_field_tag :question_ids %>
+			<div class="field">
+				<p><label><b>Description</b></label></p>
+				<%= text_area :questionnaire, :description, :rows => 5, :cols => 60 %>	
+			</div>
+		<hr />
+		<b>List questions</b>
+		<div id="questionnaire_questions">
+			
+		</div>
+		
+		<div class="actions">
+			<%= f.submit "Save questionnaire", :class => 'btn btn-primary' %>
+		</div>
+		<% end %>
+	</div>
+	<div class="right" id="questions">
+		<h1>
+			<b>List Questions</b>
+			<i>Choose questions to add to questionnaire</i>
+		</h1>
+		<div id="list_questions">
+			<% @questions.each do |q| %>
+			<div class="row">
+				<div class="question_area">
+					  
+					  <b>Question: </b>
+					  <%=h q.question %>
+					  <div class="action">
+					  	<%= hidden_field_tag :question_id, q.id, :class=>"question_id" %>
+					  	<%= img_button "Choose", "add.png", "#", :class => "choose_question" %>
+					  </div>
+				</div>
+				
+				<div class="form" id="answers_area">
+					<% case q.question_type %>
+					<% when Question::TYPES[:text] %>
+						   <%= text_field_tag :question_answer, "" %>
+					<% when Question::TYPES[:list] %>
+						   <%= text_area :question_answer %>
+					<% when Question::TYPES[:bool] %>
+						   <div class="left">
+						   	<%= radio_button :question_answer, "Yes" %>
+						   </div>
+						   <div class="right">
+						   	<%= radio_button :question_answer, "No" %>
+						   </div>
+					<% when (Question::TYPES[:multiple]) %>
+							<% i = 1 %>
+							<% q.question_answers.each do |answer| %>
+								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								    <%= check_box_tag :options %>
+								    <%= answer.answer %>
+							    </div>
+							<% end %>
+							
+					<% when (Question::TYPES[:single]) %>
+							<% i = 1 %>
+							<% q.question_answers.each do |answer| %>
+								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								    <%= radio_button :options %>
+								    <%= answer.answer %>
+							    </div>
+							<% end %>
+							
+					<% end %>
+					
+				</div>
+				<div class="clear"></div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+</div>

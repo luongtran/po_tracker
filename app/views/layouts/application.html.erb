@@ -30,12 +30,16 @@
   because it can't be included for media='screen' -->
       <%= stylesheet_link_tag "vendor/yui.css",media: 'all', charset: 'utf-8' %>
       <%= stylesheet_link_tag "printer.css",media: 'print', charset: 'utf-8' %>
+      <%= stylesheet_link_tag "jquery.signaturepad" %>
       <!-- This must come last. -->
 
       <%= javascript_include_tag 'application' %>
   <%#= javascript_include_tag 'base' %>
       <%= javascript_include_tag 'base_packaged' %>
       <%= javascript_include_tag 'global_use' %>
+      <%= javascript_include_tag 'jquery.signaturepad' %>
+      <%= javascript_include_tag 'jquery.signaturepad.min' %>
+      <%= javascript_include_tag 'json2.min' %>
 
 
     <% else %>

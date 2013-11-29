@@ -1,0 +1,31 @@
+<style type="text/css">
+	#form_question_answer .left {
+		width:20%;
+		float:left;
+	}
+	
+	#form_question_answer .right {
+		width:20%;
+		float:left;
+	}
+</style>
+<div id="form_question_answer" class="left">
+  <% i = 1 %>
+  <% @question_answers.each do |a| %>
+	  <div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+		    <%= check_box_tag :options %>
+		    <%= a.answer %>
+		    <%= hidden_field_tag :id, a.id, :class => "question_answer_id" %>
+		    <%= img_button "Edit", "order_edit.png", "#", :class => "edit_answer" %>
+		    <%= img_button "Delete", 'delete.png', "#", :class => "delete_answer" %>
+	  </div>
+	  <% i += 1%>
+ <% end %>
+ <div class="clear"></div>
+ <!--
+ <%= text_area :answer, '', :class=>"text", :rows => 5, :cols => 30 %>
+ -->
+  <%= hidden_field_tag :number_answer, @question_answers.count %>
+
+</div>
+

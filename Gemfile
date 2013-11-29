@@ -60,5 +60,7 @@ gem 'annotate', ">=2.5.0"
 gem "dynamic_form"
 gem 'rmagick'
 gem "gruff"
+
+gem "activerecord-import"
 #gem 'object_daddy'
 

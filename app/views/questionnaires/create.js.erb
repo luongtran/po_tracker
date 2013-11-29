@@ -1,0 +1,7 @@
+<%
+if @success 
+%>
+jQuery("#questionnaire").html("<%= escape_javascript(render 'questionnaires/list_questions_in_questionnare') %>")
+<% else %>
+
+<% end %>

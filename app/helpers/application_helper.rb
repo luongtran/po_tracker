@@ -289,5 +289,7 @@ module ApplicationHelper
   def link_to_note(note)
     "<a href='##{dom_id note}' title='#{h note.note_text}' id='#{dom_id note}' onclick='PipeBuilder.showNote(this); return false;' >#{note.id}</a>"
   end
+  
+  
 
 end

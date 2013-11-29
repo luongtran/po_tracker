@@ -1,0 +1,34 @@
+<style type="text/css" media="screen">
+    th.no, td.no { width: 200px; }
+    th.question, td.question { }
+    th.type, td.type { width: 200px; }
+    th.status, td.status {width:150px;}
+</style>
+
+
+
+  <table class="information" cellspacing="0">
+  	<thead>
+	    <th class="no">
+	      ID
+	    </th>
+	    <th class="question">
+	      Answer
+	    </th>
+	    <th>Order</th>
+	</thead>
+    <% @question_answers.each do |a| %>
+        <tr class="<%= cycle(:even, :odd) %>">
+          <td class="no">
+            <%= h a.id %>
+          </td>
+          <td class="question">
+            <%= h a.answer %>
+          </td>
+          
+          <td class="status">
+          	<%= h a.position %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
