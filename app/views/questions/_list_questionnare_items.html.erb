@@ -13,9 +13,10 @@
 		padding:10px;
 	}
 </style>
+<% i = 0 %>
 <% @questionnaire_questions.each do |questionnaire_question| %>
 			<% 
-				i = 0
+				
 				q = questionnaire_question.question 
 			%>
 			<div class="row">
@@ -35,16 +36,15 @@
 						   <%= text_area "vendor_questionnaire_answers_#{i}", :answer, :value => vendor_answer %>
 					<% when Question::TYPES[:bool] %>
 						   <div class="left">
-						   	<%= vendor_answer == answer.id %>
-						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "Yes", (vendor_answer == "Yes") ? "checked" : "" %>
+						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "Yes", :checked => (vendor_answer == "Yes") %> Yes
 						   </div>
 						   <div class="right">
-						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "No", (vendor_answer == "No") ? "checked" : "" %>
+						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "No", :checked => (vendor_answer == "No")  %> No
 						   </div>
 					<% when (Question::TYPES[:multiple]) %>
-							<% i = 1 %>
+							<% j = 1 %>
 							<% q.question_answers.each do |answer| %>
-								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								<div class="<%= j % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
 								    <%= check_box_tag "question_answer_ids_#{questionnaire_question.id}[]",  answer.id, is_vendor_answer(answer.id, @vendor_questionnaire) %>
 								    <%= answer.answer %>
 								    
@@ -52,11 +52,10 @@
 							<% end %>
 							
 					<% when (Question::TYPES[:single]) %>
-							<% i = 1 %>
+							<% j = 1 %>
 							<% q.question_answers.each do |answer| %>
-								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
-									<%= vendor_answer == answer.id %>
-								    <%= radio_button "vendor_questionnaire_answers_#{i}", :question_answer_id, answer.id, (vendor_answer == answer.id) ? "checked" : "" %>
+								<div class="<%= j % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								    <%= radio_button "vendor_questionnaire_answers_#{i}", :question_answer_id, answer.id, :checked => (vendor_answer == answer.id) %>
 								    <%= answer.answer %>
 							    </div>
 							<% end %>

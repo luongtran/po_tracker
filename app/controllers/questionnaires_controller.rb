@@ -15,9 +15,13 @@ class QuestionnairesController < ApplicationController
   end
   
   def create
+    logger = Logger.new('log/create_questionnaire_log')
+    logger.info("=========== Log for create questionnaire ==========")
     @questionnaire = Questionnaire.new(params[:questionnaire])
+    logger.info(params[:questionnaire])
     if @questionnaire.save!
       questionnaire_questions = []
+      logger.info(questionnaire_questions)
       questions = params[:question_ids].split(',')
       questions.each do |q|
         questionnaire_questions << QuestionnairesQuestion.new({:question_id => q, :questionnaire_id => @questionnaire.id})

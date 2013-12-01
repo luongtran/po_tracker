@@ -44,11 +44,11 @@
 						   <%= text_area "vendor_questionnaire_answers_#{i}", :answer %>
 					<% when Question::TYPES[:bool] %>
 						   <div class="left">
-						   	<%= vendor_answer == answer.id %>
-						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "Yes" %>
+						   	
+						   	<%= radio_button_tag "vendor_questionnaire_answers_#{i}", "Yes" %>
 						   </div>
 						   <div class="right">
-						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "No" %>
+						   	<%= radio_button_tag "vendor_questionnaire_answers_#{i}", "No"%>
 						   </div>
 					<% when (Question::TYPES[:multiple]) %>
 							<% i = 1 %>
@@ -64,7 +64,7 @@
 							<% q.question_answers.each do |answer| %>
 								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
 									
-								    <%= radio_button "vendor_questionnaire_answers_#{i}", :question_answer_id, answer.id %>
+								    <%= radio_button_tag "vendor_questionnaire_answers_#{i}", answer.id %>
 								    <%= answer.answer %>
 							    </div>
 							<% end %>

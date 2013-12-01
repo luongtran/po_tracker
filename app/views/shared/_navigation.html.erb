@@ -5,7 +5,7 @@
             <%= link_to "Menu", "/home/menu", :class => class_for("home", params), :accesskey => "1" %>
         </li>
         <li>
-            <%= link_to "Questions", "/questionairre_items", :class => class_for("home", params), :accesskey => "1" %>
+            <%= link_to "Questions", questions_path, :class => class_for("home", params), :accesskey => "1" %>
         </li>
         <% if resource_enabled?(:orders) %>
 	        <li>

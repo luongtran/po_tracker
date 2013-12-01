@@ -67,6 +67,7 @@ class QuestionnaireWorkflowsController < ApplicationController
         
         vendor_questionnaire_answers << vendor_questionnaire_answer
       end     
+      i += 1
     end
     
     VendorQuestionnaireAnswer.import vendor_questionnaire_answers
@@ -74,10 +75,11 @@ class QuestionnaireWorkflowsController < ApplicationController
     if !params["vendor_signature_#{@vendor_questionnaire.approval_step}"].nil? && !params["vendor_signature_#{@vendor_questionnaire.approval_step}"].empty? && @vendor_questionnaire.approval_status.nil?
       @vendor_sign = @vendor_questionnaire.signatures.create!({:sign => params["vendor_signature_#{@vendor_questionnaire.approval_step}"], :text => "Vendor signature"})
     end
-    
-    @vendor_questionnaire.approval_step = 3
-    @vendor_questionnaire.save!
-    
+    if (@vendor_questionnaire.approval_status.nil?) 
+      @vendor_questionnaire.approval_step = 3
+      @vendor_questionnaire.save!
+    end
+    load_vendor_questionnaire
     @action_url = ""
     render "show"
   end
@@ -194,7 +196,7 @@ class QuestionnaireWorkflowsController < ApplicationController
       result = @vendor_questionnaire_approval.update_attributes!({:approval_status => params[:status], :comment => params[:conversation]})
     end
     
-    if (result && status == "approved")
+    if (result && params[:status] == "approved")
         @vendor_questionnaire.approval_step += 1
         @vendor_questionnaire.approval_status = "approved"
     else

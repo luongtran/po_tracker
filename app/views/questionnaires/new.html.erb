@@ -111,6 +111,7 @@
 			<i>Choose questions to add to questionnaire</i>
 		</h1>
 		<div id="list_questions">
+			<% i = 0 %>
 			<% @questions.each do |q| %>
 			<div class="row">
 				<div class="question_area">
@@ -126,15 +127,16 @@
 				<div class="form" id="answers_area">
 					<% case q.question_type %>
 					<% when Question::TYPES[:text] %>
-						   <%= text_field_tag :question_answer, "" %>
+						   <%= text_field_tag "question_answers_text_#{i}", "" %>
 					<% when Question::TYPES[:list] %>
-						   <%= text_area :question_answer %>
+						   <%= text_area :question_answers, "" %>
 					<% when Question::TYPES[:bool] %>
 						   <div class="left">
-						   	<%= radio_button :question_answer, "Yes" %>
+						   	
+						   	<%= radio_button_tag "question_answers_bool_#{i}", "Yes" %>
 						   </div>
 						   <div class="right">
-						   	<%= radio_button :question_answer, "No" %>
+						   	<%= radio_button_tag "question_answers_bool_#{i}", "No" %>
 						   </div>
 					<% when (Question::TYPES[:multiple]) %>
 							<% i = 1 %>
@@ -149,7 +151,7 @@
 							<% i = 1 %>
 							<% q.question_answers.each do |answer| %>
 								<div class="<%= i % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
-								    <%= radio_button :options %>
+								    <%= radio_button_tag :options, "" %>
 								    <%= answer.answer %>
 							    </div>
 							<% end %>

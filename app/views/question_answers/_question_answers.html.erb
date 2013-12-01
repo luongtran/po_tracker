@@ -9,6 +9,17 @@
 		float:left;
 	}
 </style>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		jQuery('.delete_answer').click(function() {
+			var answer_id = jQuery(this).parent().parent('.answer_wrapper').children('.question_answer_id').val();
+			jQuery.ajax({
+				type : "DELETE",
+				url: "<%=  %>"
+			});
+		});
+	});
+</script>
 <div id="form_question_answer" class="left">
   <% i = 1 %>
   <% @question_answers.each do |a| %>

@@ -375,7 +375,7 @@ MaterialTracker::Application.routes.draw do
   end
 
   resources :links
-  match '/init-questionnaire/(:id)' => 'questionnaire_workflows#init_questionnaire_workflow'
+  match '/init-questionnaire/(:id)' => 'questionnaire_workflows#init_questionnaire_workflow', :as => :init_questionnaire_workflow
   match 'vendor-questionnaire/(:id)' => "questionnaire_workflows#show", :as => :show_question
   
   get 'vendor-answer-questionnaire/(:id)' => 'questionnaire_workflows#vendor_view', :as => :vendor_view
@@ -384,12 +384,12 @@ MaterialTracker::Application.routes.draw do
   post 'first-approval/(:id)' => 'questionnaire_workflows#first_approval', :as => :first_approval
   
   match 'qa-approval/(:id)' => 'questionnaire_workflows#qa_approval', :as => :qa_approval
-  match 'procurement-approval/(:id)' => 'questionnaire_workflow#procurement_approval', :as => :procurement_approval
-  match 'qc-approval/(:id)' => 'questionnaire_workflow#qc_approval', :as => :qc_approval
-  match 'hse-approval/(:id)' => 'questionnaire_workflow#hse_approval', :as => :hse_approval
-  match 'buyer-approval-step9/(:id)' => 'questionnaire_workflow#buyer_approval_step9', :as => :buyer_approval_step9
-  match 'procurement-manager-approval/(:id)' => 'questionnaire_workflow#procurement_manager_approval', :as => :procurement_manager_approval
-  match 'procurement-coordinator/(:id)' => 'questionnaire_workflow#procurement_coordinator', :as => :procurement_coordinator
+  match 'procurement-approval/(:id)' => 'questionnaire_workflows#procurement_approval', :as => :procurement_approval
+  match 'qc-approval/(:id)' => 'questionnaire_workflows#qc_approval', :as => :qc_approval
+  match 'hse-approval/(:id)' => 'questionnaire_workflows#hse_approval', :as => :hse_approval
+  match 'buyer-approval-step9/(:id)' => 'questionnaire_workflows#buyer_approval_step9', :as => :buyer_approval_step9
+  match 'procurement-manager-approval/(:id)' => 'questionnaire_workflows#procurement_manager_approval', :as => :procurement_manager_approval
+  match 'procurement-coordinator/(:id)' => 'questionnaire_workflows#procurement_coordinator', :as => :procurement_coordinator
   
   match '/signup' => 'employees#new', :as => :signup
   match '/login' => 'sessions#new', :as => :login
