@@ -618,6 +618,13 @@ ActiveRecord::Schema.define(:version => 20131129083913) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+  
+  create_table "questionnaire_groups", :force => true do |t|
+    t.integer :questionnaire_id
+    t.integer :approver_id
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
 
   create_table "questionnaires_questions", :force => true do |t|
     t.integer  "question_id"
@@ -902,7 +909,7 @@ ActiveRecord::Schema.define(:version => 20131129083913) do
   end
 
   create_table "vendor_questionnaire_approvals", :force => true do |t|
-    t.integer  "vendor_questionnaire_id"
+    t.integer  "vendor_questionnaire_group_id"
     t.integer  "approver"
     t.integer  "signature_id"
     t.text     "approval_status"
@@ -914,13 +921,31 @@ ActiveRecord::Schema.define(:version => 20131129083913) do
 
   create_table "vendor_questionnaires", :force => true do |t|
     t.integer  "vendor_id"
+    t.integer  "employee_id"
     t.integer  "questionnaire_id"
-    t.integer  "approval_step"
+    t.boolean  "vendor_answer",:default => true
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.datetime "completed_at"
     t.integer  "vendor_questionnaire_approval_id"
     t.string   "approval_status"
+    t.string   "access_key"
   end
+  create_table "vendor_questionnaire_groups", :force => true do |t|
+    t.string   "approval_status"
+    t.integer  "questionnaire_group_id"
+    t.integer  "vendor_questionnaires_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+  
+   create_table "vendor_question_approval_statuses" do |t|
+      t.integer "vendor_questionnaire_group_id"
+      t.integer "question_id"
+      t.string  "approval_status"
+      t.datetime "created_at",                       :null => false
+      t.datetime "updated_at",                       :null => false
+   end     
 
   create_table "vendors", :force => true do |t|
     t.string   "vendor_no"

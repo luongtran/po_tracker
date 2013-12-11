@@ -10,6 +10,8 @@ class Question < ActiveRecord::Base
   
   has_many :question_answers
   
+  has_many :vendor_question_approval_statuss
+  
   TYPES = {:list => "List", :bool => "Boolean", :multiple => "Multiple Choice", :single => "Single Choice", :text => "Text"}
   
   TYPES_ARR = ["List", "Boolean", "Text", "Multiple Choice", "Single Choice"]
@@ -22,4 +24,9 @@ class Question < ActiveRecord::Base
     (question_type == Question::TYPES[:multiple]) || (question_type == Question::TYPES[:single]) 
   end
   
+  def approve_status(vendor_questionnaire_groups_id)
+    vendor_question_approval_status = VendorQuestionApprovalStatus.where(question_id: self.id,vendor_questionnaire_group_id: vendor_questionnaire_groups_id).last
+    approver_status = vendor_question_approval_status.approval_status
+    return approver_status  
+  end  
 end

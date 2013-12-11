@@ -1,0 +1,28 @@
+<div class="<%= @vendor_answer ? 'sigPad' : 'sigPaded' %>">
+	<label><b><%= @text %></b></label>
+	<ul class="sigNav">
+		<li class="drawIt"><a href="#draw-it" class="current">Draw It</a></li>
+	    <li class="clearButton"><a href="#clear">Clear</a></li>
+	</ul>
+	<div class="sig sigWrapper">
+	    <div class="typed"></div>
+	    <canvas class="pad" width="398" height="80"></canvas>
+	    <%= hidden_field_tag "vendor_signature_#{@vendor_questionnaire.id}", "", :class => "output" %>
+	</div>
+</div>
+
+<script type="text/javascript">
+		if("<%= @vendor_answer ? 'sigPad' : 'sigPaded' %>" === "sigPaded") {
+			var sign =  JSON.parse('<%= raw @sign %>');
+			jQuery('.sigPaded').each( function(i, obj) {
+				if(!jQuery(obj).hasClass('assigned')) {
+					jQuery(obj).addClass('assigned');
+					jQuery(obj).signaturePad({displayOnly:true}).regenerate(sign);
+				} 
+			});
+			
+		} else {                        
+			jQuery('.sigPad').signaturePad({drawOnly:true});
+		}
+	
+</script>

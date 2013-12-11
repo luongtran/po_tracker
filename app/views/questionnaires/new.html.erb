@@ -1,17 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 <style type="text/css">
-	#questionnaire_creating {
+        .question_groups.sort{
+            border: #aaaaaa solid 1px;
+            min-height: 300px;
+            overflow: auto;
+        }
+        ul{ 
+            
+            min-height: 300px;
+           //#width:500px;
+        }
+        .ui-sortable{
+          
+          box-shadow:inset 0px 1px 0px 0px #fff, inset 0px -1px 2px 0px #000, 0 5px 8px rgba(0, 0, 0, .8), 0 0px 0px 1px rgba(0, 0, 0, .3);
+          
+        }
+        .moveObject{
+          background-color: #FAFF74;
+        }
+	#list_questions{
 		width:49%;
 		float:left;
-		min-height:50px;
-		
+		height:500px;
+                border-right: solid 1px;
+		overflow-y: scroll;
 	}
 	
-	#questions {
+	#questionnaire_creating {
 		width:49%;
-		float:left;
-		border-left: solid 1px;
+		float:left;		
 		padding-left: 10px;
-		height:400px;
+		height:500px;
 		overflow-y: scroll;
 	}
 	
@@ -24,9 +44,10 @@
 		width:20%;
 		float:left;
 	}
-	.row {
-		border-bottom: solid 1px;
+	.question {
+		// border-bottom: solid 1px;
 		padding:10px;
+                border: #aaccf6 solid 1px;
 	}
 	.action {
 		float:right;
@@ -35,93 +56,32 @@
 		margin-top: 20px;
 		float:right;
 	}
-	
+        .questions_area{
+          border: #718bb7 solid 1px;
+          min-height: 200px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+       
 </style>
 
-<script type="text/javascript">
-	jQuery(document).ready(function() {
-		var edit_link = '<%= img_button "Remove", "delete.png", "#", :class => "remove_question" %>';
-		var choose_link = '<%= img_button "Choose", "add.png", "#", :class => "choose_question" %>'
-		jQuery('.choose_question').on('click', function() {
-			var question_id = jQuery(this).parent().parent('.action').children('.question_id').val();
-			var question_ids = jQuery('#question_ids').val();
-			if(question_ids == "" || question_ids == null) {
-				question_ids = question_id;
-			} else {
-				question_ids += ("," + question_id);
-			}
-			jQuery('#question_ids').val(question_ids);
-			var root_node = jQuery(this).parent().parent().parent().parent('.row');
-			var action_node = jQuery(this).parent().parent('.action');
-			jQuery(action_node).empty();
-			
-			jQuery(action_node).prepend(edit_link);
-			var html = '<div class="row">' + jQuery(root_node).html() + "</div>";
-			
-			jQuery('#questionnaire_questions').append(html);
-			jQuery(root_node).remove();
-		});
-		
-		jQuery(".remove_question").on('click', function() {
-			var root_node = jQuery(this).parent().parent().parent().parent('.row');
-			var action_node = jQuery(this).parent().parent('.action');
-			jQuery(action_node).empty();
-			
-			jQuery(action_node).prepend(choose_link);
-			var html = '<div class="row">' + jQuery(root_node).html() + "</div>";
-			
-			jQuery('#list_questions').prepend(html);
-			jQuery(root_node).remove();
-		});
-		
-	});
-</script>
+<body>
 
 <div id="questionnaire">
-	<div id="questionnaire_creating">
-		<h1>
-			<b>Questionnaire</b>
-			
-		</h1>
-		<%= form_for @questionnaire, :class => "edit full", :remote => true, :method => "POST" do |f| %>
-		  <div class="field">
-		  	<p><label><b>Title</b></label></p>
-		  	<%= f.text_field :title %>
-	  	  </div>
-			
-			<%= hidden_field_tag :question_ids %>
-			<div class="field">
-				<p><label><b>Description</b></label></p>
-				<%= text_area :questionnaire, :description, :rows => 5, :cols => 60 %>	
-			</div>
-		<hr />
-		<b>List questions</b>
-		<div id="questionnaire_questions">
-			
-		</div>
-		
-		<div class="actions">
-			<%= f.submit "Save questionnaire", :class => 'btn btn-primary' %>
-		</div>
-		<% end %>
-	</div>
-	<div class="right" id="questions">
+  <div id="list_questions">
 		<h1>
 			<b>List Questions</b>
 			<i>Choose questions to add to questionnaire</i>
 		</h1>
-		<div id="list_questions">
+		<div id="question" class="sort">
+                  <ul>
 			<% i = 0 %>
 			<% @questions.each do |q| %>
-			<div class="row">
+			<li class="question">
 				<div class="question_area">
-					  
-					  <b>Question: </b>
-					  <%=h q.question %>
-					  <div class="action">
-					  	<%= hidden_field_tag :question_id, q.id, :class=>"question_id" %>
-					  	<%= img_button "Choose", "add.png", "#", :class => "choose_question" %>
-					  </div>
+                                    <b>Question: </b>
+                                    <%= hidden_field_tag :question_id, q.id, :class=>"question_id" %>
+                                    <%=h q.question %>
 				</div>
 				
 				<div class="form" id="answers_area">
@@ -129,10 +89,9 @@
 					<% when Question::TYPES[:text] %>
 						   <%= text_field_tag "question_answers_text_#{i}", "" %>
 					<% when Question::TYPES[:list] %>
-						   <%= text_area :question_answers, "" %>
+						   <%= text_area :question_answers, "#{i}",rows: "5" ,cols: "60" %>
 					<% when Question::TYPES[:bool] %>
 						   <div class="left">
-						   	
 						   	<%= radio_button_tag "question_answers_bool_#{i}", "Yes" %>
 						   </div>
 						   <div class="right">
@@ -160,10 +119,207 @@
 					
 				</div>
 				<div class="clear"></div>
-			</div>
+			</li>
 			<% end %>
+                </ul>
 		</div>
 	</div>
+	<div class=right" id="questionnaire_creating">
+		<h1>
+		<b>Questionnaire</b>
+			
+		</h1>
+		<%= form_for @questionnaire, :class => "edit full", :method => "POST" do |f| %>
+                    <div class="field">
+                          <p><label><b>Title</b></label></p>
+                          <%= f.text_field :title ,required: true,size: "58"%>
+                    </div>
+                          <%= hidden_field_tag :question_ids %>
+                    <div class="field">
+                            <p><label><b>Description</b></label></p>
+                            <%= text_area :questionnaire, :description, :rows => 5, :cols => 60 %>	
+                    </div>
+                  <hr />
+                  <div class="field">
+                            <p><label><b>Select number groups</b></label></p>
+                            <%= select_tag :number_groups,
+                              options_for_select([["1",1],["2",2],["3",3],["4",4],["5",5],["6",6],["7",7],["8",8],["9",9],["10",10]],""),prompt: " --Choose--" %>
+                    </div>
+                  <div id="question_groups"></div>
+                  <div class="actions">
+                          <%= f.submit "Save questionnaire", :class => 'btn btn-primary' %>
+                  </div>
+		<% end %>
+	</div>
+	
 	
 	<div class="clear"></div>
 </div>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+      jQuery('#question ul').sortable({
+        revert: 'invalid',
+        connectWith: ".sort ul",
+        items: "li.question",
+        start: function(event, ui){      
+         ui.item.addClass("moveObject");
+        },
+        stop: function(event, ui){ 
+           ui.item.removeClass("moveObject");
+        }
+      });
+        jQuery('.sort ul').sortable({
+        revert: 'invalid',
+        connectWith: ".sort ul",
+        items: "li.question",
+         start: function(event, ui){      
+         ui.item.addClass("moveObject");
+        },
+        stop: function(event, ui){ 
+           ui.item.removeClass("moveObject");
+        }
+    });
+});
+
+        
+        jQuery(document).on('change','#number_groups', function() {
+            renderGroups(this.value); 
+          });
+        function renderGroups(num){
+          var question_groups = jQuery("#question_groups");
+          var current_drag_questions = question_groups.children().children().children(".question");
+          console.log(current_drag_questions);
+          jQuery("#list_questions ul").append(current_drag_questions);
+          jQuery(question_groups).empty();
+          for(var i = 1;i <= num; i++){
+           jQuery("#question_groups").append('<div class="sort" id='+i+'>'+
+                      '<input class="question_group_id" type="hidden" value='+i+' name="question_group_id">'+
+                      '<b>Questionnaire group #<span class="num_group">'+ i +'</span> :</b><br/>'+
+                      '<b>Questions list:</b><br/>'+
+                      '<ul></ul></div>'+
+                      '<div class="clear"></div>'
+                    );
+          }
+      jQuery('#question ul').sortable({
+        revert: 'invalid',
+        connectWith: ".sort ul",
+        items: "li.question",
+        start: function(event, ui){      
+         ui.item.addClass("moveObject");
+        },
+        stop: function(event, ui){ 
+           ui.item.removeClass("moveObject");
+        }
+          });
+        jQuery('.sort ul').sortable({
+        revert: 'invalid',
+        connectWith: ".sort ul",
+        items: "li.question",
+         start: function(event, ui){      
+         ui.item.addClass("moveObject");
+        },
+        stop: function(event, ui){ 
+           ui.item.removeClass("moveObject");
+        }
+          });
+        };
+	jQuery(document).ready(function() {
+                renderGroups(jQuery("#number_groups").val());
+		var edit_link = '<%= img_button "Remove", "delete.png", "javascript:;", :class => "remove_question" %>';
+		var choose_link = '<%= img_button "Choose", "add.png", "javascript:;", :class => "choose_question" %>';
+		jQuery(document).on('click','.choose_question', function() {
+			var question_id = jQuery(this).parents('.question_area').children('.question_id').val();
+			var question_ids = jQuery('#question_ids').val();                        
+			if(question_ids === "" || question_ids === null) {
+				question_ids = question_id;
+			} else {
+				question_ids += ("," + question_id);
+			}
+			jQuery('#question_ids').val(question_ids);
+			var root_node = jQuery(this).parents('.question');
+			var action_node = jQuery(this).parents('.action');
+			jQuery(action_node).empty();
+			jQuery(action_node).prepend(edit_link);
+			var html = '<div class="question">' + jQuery(root_node).html() + "</div>";
+			jQuery('#questionnaire_questions').append(html);
+			jQuery(root_node).remove();
+		});
+		
+		jQuery(document).on('click',".remove_question", function() {
+                        var question_id = jQuery(this).parents('.question_area').children('.question_id').val(); 
+                        var newValue = jQuery('#question_ids').val().replace(question_id,"");
+                        jQuery('#question_ids').val(newValue);
+                        var question_ids = jQuery('#question_ids').val();
+			var root_node = jQuery(this).parents('.question');
+			var action_node = jQuery(this).parents('.action');
+			jQuery(action_node).empty();
+			jQuery(action_node).prepend(choose_link);
+			var html = '<div class="question">' + jQuery(root_node).html() + "</div>";
+			jQuery('#list_questions').prepend(html);
+			jQuery(root_node).remove();
+		});
+                jQuery(document).on('submit',"#new_questionnaire", function(e){
+                  e.preventDefault();
+                  var sc = true;
+                  var total_group = jQuery("#number_groups").val();                  
+                  if(total_group === "" || total_group === null){
+                    jQuery("#ajax_loading").text("Please choose at least one groups").fadeIn(300).delay(3000).fadeOut(300);
+                    return false;
+                  }
+                  var questionnaire = [];                  
+                  questionnaire.push({title: jQuery("#questionnaire_title").val() , description: jQuery("#questionnaire_description").val()});
+                  jQuery.each(jQuery("#question_groups .sort"), function(key, value){
+                  //  var groups = [];
+                    var groups = new Object();
+                    var group_id = jQuery(value).children(".question_group_id").val();
+                    groups.id = group_id;
+                    var q_ids = jQuery(value).children().children().children().children("#question_id");                   
+                            if(q_ids.length > 0){
+                              var question_ids = [];
+                              jQuery.each(q_ids,function(i,value){
+                                question_ids.push(jQuery(value).val());
+                              });  
+                                groups.question = question_ids;
+                                questionnaire.push({groups: groups});
+                            }else
+                            {    
+                                jQuery("#ajax_loading").text("Question group #" + (key + 1) + " is empty !").fadeIn(300).delay(3000).fadeOut(300);
+                                sc = false;
+                                return false; // break loop
+                            }                    
+                  });
+                  
+                  if(sc === true || sc === "true"){
+                    var data = JSON.stringify(questionnaire);
+                    jQuery.ajax({
+                        type: "post",
+                        url: "/questionnaires",
+                        data: {questionnaire: data},
+                        dataType: "json",
+                        beforeSend: function(xhr){
+                          jQuery("#ajax_loading").text("Loading ...").show();
+                          xhr.setRequestHeader(
+                          'X-CSRF-Token', 
+                          $('meta[name="csrf-token"]').attr('content'));
+                        },
+                        success: function(response){
+                          jQuery("#ajax_loading").hide();
+                          if (response.success === true){
+                            var url = response.url;
+                            window.location = url ;
+                            jQuery("#ajax_loading").text("New questionnaire created successfully!").fadeIn(300).delay(3000).fadeOut(300);
+                          }else{
+                            jQuery("#ajax_loading").text("Failer to create new questionnaire !").fadeIn(300).delay(3000).fadeOut(300);
+                          }
+                        },
+                        error:function(){
+                          jQuery("#ajax_loading").text("Error when created!").fadeIn(300).delay(3000).fadeOut(300);
+                        }
+                    });
+                  }else{
+                    jQuery("#ajax_loading").text("Please sure all groups is has least one question").fadeIn(300).delay(3000).fadeOut(300);
+                  }
+                  
+                });
+	});
+</script>

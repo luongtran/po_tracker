@@ -1,12 +1,12 @@
 class QuestionnairesController < ApplicationController
-  
+  respond_to :json
   def index
-    
+    @questionnaires = Questionnaire.list(params, :order => "questionnaires.description")
   end
   
   def show
     @questionnaire = Questionnaire.find(params[:id])
-    @questionnaire_questions = @questionnaire.questionnaires_questions
+    @questionnaire_groups = @questionnaire.questionnaire_groups.includes(:questionnaires_questions).includes(:questions)
   end
   
   def new
@@ -15,24 +15,43 @@ class QuestionnairesController < ApplicationController
   end
   
   def create
+    require 'json'
     logger = Logger.new('log/create_questionnaire_log')
     logger.info("=========== Log for create questionnaire ==========")
-    @questionnaire = Questionnaire.new(params[:questionnaire])
-    logger.info(params[:questionnaire])
+    data = JSON.parse(params[:questionnaire])
+    params[:new] = {}
+    params[:new][:title] = data[0]["title"]
+    params[:new][:description] = data[0]["description"]
+    @questionnaire = Questionnaire.new(params[:new])    
+    #require 'debugger';debugger
     if @questionnaire.save!
-      questionnaire_questions = []
-      logger.info(questionnaire_questions)
-      questions = params[:question_ids].split(',')
-      questions.each do |q|
-        questionnaire_questions << QuestionnairesQuestion.new({:question_id => q, :questionnaire_id => @questionnaire.id})
-      end
-      QuestionnairesQuestion.import questionnaire_questions
-      @success = true
-      @questionnaire_questions = QuestionnairesQuestion.includes(:question).where("questionnaire_id = ?", @questionnaire.id)
+      data.each do |data|
+        next if data["groups"].nil?
+        @questionnaire_group = QuestionnaireGroup.new(questionnaire_id: @questionnaire.id)
+        @questionnaire_group.save
+        question_ids = data["groups"]["question"] # Array ["1","2","4"]
+        question_ids.each do |q|
+          next if q == ""
+          QuestionnairesQuestion.new({:question_id => q, :questionnaire_group_id => @questionnaire_group.id}).save
+        end
+      end     
+       @success = true
     else
       @success = false
-    end
+    end   
     
+    respond_to do |format|
+      if @success
+        if request.xhr?
+          format.json { render json: { success: @success, url: questionnaire_path(@questionnaire)} }
+        else
+          format.html { redirect_to @questionnaire, notice: 'Questionnaire was created successfully.' }
+        end
+      else
+        format.html { render :action => "new" }
+        format.json { render json: @questionnaire.errors, status: :unprocessable_entity }
+      end
+    end    
   end
   
   def update

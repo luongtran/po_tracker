@@ -12,6 +12,9 @@
     <th class="name">
       <%= link_to_sort "Name", "vendors.name" %>
     </th>
+    <th class="email">
+      <%= link_to_sort "Email", "vendors.email" %>
+    </th>
     <th class="telephone">
       <%= link_to_sort "Telephone", "vendors.telephone" %>
     </th>
@@ -27,6 +30,9 @@
           </td>
           <td class="name">
             <%= link_to_desc v, :default => "No Name", :method => :name %>
+          </td>
+          <td class="email">
+            <%= h v.email %>
           </td>
           <td class="telephone">
             <%= h v.telephone %>

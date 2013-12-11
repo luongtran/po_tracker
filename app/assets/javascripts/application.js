@@ -5,6 +5,7 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery.validate
 //= require jquery-ui
 //= require jquery_ujs
 

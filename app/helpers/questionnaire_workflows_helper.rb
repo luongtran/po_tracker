@@ -5,7 +5,6 @@ module QuestionnaireWorkflowsHelper
     logger.info(vendor_questionnaire)
     logger.info(question)
     answer = nil
-    if !vendor_questionnaire.approval_step.nil? && vendor_questionnaire.approval_step > 2
       answers = vendor_questionnaire.vendor_questionnaire_answers
       answers.each do |a|
         logger.info(a)
@@ -15,15 +14,13 @@ module QuestionnaireWorkflowsHelper
             answer = a.question_answer_id
           end
         end
-      end
-    end
+      end    
     logger.info(answer)
     answer
   end
   
   def is_vendor_answer(answer, vendor_questionnaire)
     result = false
-    if !vendor_questionnaire.approval_step.nil? && vendor_questionnaire.approval_step > 2
       vendor_answers = vendor_questionnaire.vendor_questionnaire_answers
       if vendor_answers
         vendor_answers.each do |a|
@@ -31,13 +28,8 @@ module QuestionnaireWorkflowsHelper
             return true
           end
         end
-        
       end
-      
-    end
-    
     result
-    
   end
   
 end

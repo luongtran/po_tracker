@@ -1,11 +1,10 @@
-<%= form_for @vendor, :html => { :class => "edit full" } do |f| %>
-
-
+<%= form_for @vendor, :html => { :class => "edit full validate" } do |f| %>
+<div id="errorExplanation" style="display: none;">
+</div>
 <div class="left">
   <p>
     <label>Name <span class="required">(required)</span></label>
-    <%= f.text_field :name, :class => "text" %>
-    <%= error_message_on(:vendor, :name) %>
+    <%= f.text_field :name,  :class => "required text", :title => "Name can't be blank"%>
   </p>
 
   <div class="left">
@@ -44,8 +43,8 @@
     
   <div class="right">
     <p>
-      <label>Email</label>
-      <%= f.text_field :email, :class => "text" %>
+      <label>Email <span class="required">(required)</span></label>
+      <%= f.text_field :email, :class => "required text", :title => "Email can't be blank" %>
     </p>
   </div>
   

@@ -1,62 +1,34 @@
-
 <style type="text/css">
-	.field {
-		padding:20px 0px 20px 0px;
-	}
+  .field {
+    padding:20px 0px 20px 0px;
+  }
 </style>
 <div id="container">
-		<div class="field">
-			<label><b>Sent to: </b></label>
-			<%= @vendor_questionnaire.vendor.name %>
-		</div>
-		<%= form_tag @action_url, :method => "POST" do %>
-			<%= render "questionnaires/questionnaire_detail" %>
-			<% i = 0 %>
-			<% if @vendor_questionnaire.approval_step >= 2 %>
-					<% @signatures.each do |signature| %>
-					    <% @vendor_questionnaire_approval = signature.vendor_questionnaire_approval %>
-						<% @sign = signature.sign %>
-						<% @text = signature.text %>
-						<% @next_status = @vendor_questionnaire.approval_step %>
-						<%= render "signature" %>
-						<% i += 1%>
-					<% end %>
-					
-					<% if @vendor_questionnaire.approval_step == 2 %>
-						<% @next_status = @vendor_questionnaire.approval_step + 1 %>
-						<% @text = "Vendor signature" %>
-						<%= render "signature" %>
-					<% end %>
-					
-					<hr/>
-					
-					<% if (@vendor_questionnaire.approval_step > 2) %>
-						<div class="field">
-								<p><b>Please choose approve or reject</b></p>
-								<div class="left">
-									<%= radio_button_tag :status, "approved" %><label>Approve and send to next approval</label>
-								</div>
-								<div class="right">
-									<%= radio_button_tag :status, "rejected" %><label>Reject and send back to vendor</label>
-								</div>
-								<div class="clear"></div>
-						</div>
-						<div class="field">
-							<p><label>Conversation</label></p>
-							<%= text_area_tag :conversation, "", :rows => 10, :cols => 60  %>
-						</div>
-						
-						<% @next_status = @vendor_questionnaire.approval_step + 1 %>
-						<% @text = "Approval signature" %>
-						<%= render "signature" %>
-						<hr />
-					<% end %>
-			<% end %>
-			
-			
-			
-			<% if @vendor_questionnaire.approval_step >= 2  %>
-				<%= submit_tag "Submit", :class => "right" %>
-			<% end %>
-		<% end %>
-</div>
+  <div class="field">
+    <label><b>Sent to: </b></label>
+    <%= @vendor_questionnaire.vendor.name %>
+  </div>
+  <%= form_tag @action_url, :method => "POST" do %>
+    <%= render "questionnaires/questionnaire_detail" %>
+    <% if @approver_view %>
+      <div class="field">
+        <p><b>Please choose approve or reject</b></p>
+        <div class="left">
+          <%= radio_button_tag :status, "approved" %><label>Approve</label>
+        </div>
+        <div class="right">
+          <%= radio_button_tag :status, "rejected" %><label>Reject and send back to vendor</label>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="field">
+        <p><label>Conversation</label></p>
+        <%= text_area_tag :conversation, "", :rows => 10, :cols => 60  %>
+      </div>
+      <% @text = "Approver signature" %>
+      <%= render "approver_signature" %>
+      <hr/>
+      <%= submit_tag "Submit", :class => "right",data: { :disable_with => "Please wait..."} %>
+      <% end %>
+    <% end %>
+  </div>

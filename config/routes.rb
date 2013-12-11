@@ -1,4 +1,11 @@
 MaterialTracker::Application.routes.draw do
+
+  resources :vendor_questionnaire_groups
+
+
+  resources :questionnaire_groups
+
+
   resources :questionairre_items
   post '/save_questionairre_answers' => 'questionairre_items#save_answer'
   post '/delete_answer' => 'questionairre_items#delete_answer'
@@ -375,22 +382,15 @@ MaterialTracker::Application.routes.draw do
   end
 
   resources :links
-  match '/init-questionnaire/(:id)' => 'questionnaire_workflows#init_questionnaire_workflow', :as => :init_questionnaire_workflow
+  match '/init-questionnaire/(:id)' => 'questionnaire_workflows#init_questionnaire', :as => :init_questionnaire_workflow
   match 'vendor-questionnaire/(:id)' => "questionnaire_workflows#show", :as => :show_question
   
   get 'vendor-answer-questionnaire/(:id)' => 'questionnaire_workflows#vendor_view', :as => :vendor_view
   post 'vendor-answer-questionnaire/(:id)' => 'questionnaire_workflows#vendor_answer', :as => :vendor_answer
-  get 'first-approval/(:id)' => 'questionnaire_workflows#first_approval_view', :as => :first_approval_view
-  post 'first-approval/(:id)' => 'questionnaire_workflows#first_approval', :as => :first_approval
+  get 'approval/(:id)' => 'questionnaire_workflows#approval_view', :as => :approval_view
+  post 'approval/(:id)' => 'questionnaire_workflows#approval', :as => :approval
   
-  match 'qa-approval/(:id)' => 'questionnaire_workflows#qa_approval', :as => :qa_approval
-  match 'procurement-approval/(:id)' => 'questionnaire_workflows#procurement_approval', :as => :procurement_approval
-  match 'qc-approval/(:id)' => 'questionnaire_workflows#qc_approval', :as => :qc_approval
-  match 'hse-approval/(:id)' => 'questionnaire_workflows#hse_approval', :as => :hse_approval
-  match 'buyer-approval-step9/(:id)' => 'questionnaire_workflows#buyer_approval_step9', :as => :buyer_approval_step9
-  match 'procurement-manager-approval/(:id)' => 'questionnaire_workflows#procurement_manager_approval', :as => :procurement_manager_approval
-  match 'procurement-coordinator/(:id)' => 'questionnaire_workflows#procurement_coordinator', :as => :procurement_coordinator
-  
+  match 'application_approved/(:id)' => 'questionnaire_workflows#application_approved' , :as => :application_approved
   match '/signup' => 'employees#new', :as => :signup
   match '/login' => 'sessions#new', :as => :login
   match '/logout' => 'sessions#destroy', :as => :logout

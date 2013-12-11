@@ -1,10 +1,7 @@
 class Questionnaire < ActiveRecord::Base
-  attr_accessible :description, :title
-  
-  
-  has_many :questionnaires_questions
-  has_many :questions, :through => :questionnaires_questions
-  
+  extend Listable::ModelHelper
+  attr_accessible :description, :title,:completed_at
   has_many :vendor_questionnaires
-  
+  has_many :questionnaire_groups
+  PERPAGE = 100
 end

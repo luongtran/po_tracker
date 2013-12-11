@@ -1,0 +1,34 @@
+<style type="text/css">
+	.field {
+		padding:20px 0px 20px 0px;
+      }
+</style>
+<h1>VENDOR - APPLICATION APPROVED</h1>
+<div class="congratulations"
+<h3>Congratulations !</h3>
+  <h3>Your application is completed and is good until <%= @vendor_questionnaire.completed_at.strftime("%m/%d/%Y %H:%M") %></h3>
+<div id="container">
+    <div class="field">
+            <label><b>Sent to: </b></label>
+            <%= @vendor_questionnaire.vendor.name %>
+    </div>
+            <%= render "questionnaires/questionnaire_detail" %>
+            <% i = 0 %>
+            <% if @vendor_questionnaire.approval_step >= 2 %>
+                <% @signatures.each do |signature| %>
+                    <% @vendor_questionnaire_approval = signature.vendor_questionnaire_approval %>
+                        <% @sign = signature.sign %>
+                        <% @text = signature.text %>
+                        <% @next_status = @vendor_questionnaire.approval_step %>
+                        <%= render "signature" %>
+                        <% i += 1%>
+                <% end %>
+
+                <% if @vendor_questionnaire.approval_step == 2 %>
+                        <% @next_status = @vendor_questionnaire.approval_step + 1 %>
+                        <% @text = "Vendor signature" %>
+                        <%= render "signature" %>
+                <% end %>
+                <hr/>
+            <% end %>
+</div>

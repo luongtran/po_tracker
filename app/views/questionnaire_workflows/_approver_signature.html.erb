@@ -1,0 +1,44 @@
+<% if @viewOnly %>
+<div class="conversation">
+  <% if !@vendor_questionnaire_approvals.nil? %>
+          <p><b>Approver:</b></p>
+          <%= @vendor_questionnaire_approvals.first.employee.full_name %>
+          <p><b>Conversation:</b></p>
+          <ul>
+          <% @vendor_questionnaire_approvals.each do |approval|%>
+            <li><%= approval.created_at.strftime("%H:%M %F") %> - <%= approval.comment %></li>
+          <% end %>
+          </ul>
+          <p><b>Approval Status: </b></p>
+          <%= @vendor_questionnaire_approvals.last.approval_status %>
+  <% end %>
+</div>
+<% end %>
+<div class="<%= @viewOnly ? 'sigPaded' : 'sigPad' %>">
+	<label><b><%= @text %></b></label>
+	<ul class="sigNav">
+		<li class="drawIt"><a href="#draw-it" class="current">Draw It</a></li>
+	    <li class="clearButton"><a href="#clear">Clear</a></li>
+	</ul>
+	<div class="sig sigWrapper">
+	    <div class="typed"></div>
+	    <canvas class="pad" width="398" height="80"></canvas>
+	    <%= hidden_field_tag "approver_signature_#{@vendor_questionnaire.id}", "", :class => "output" %>
+	</div>
+</div>
+
+<script type="text/javascript">
+		if("<%= @viewOnly ? 'sigPaded' : 'sigPad' %>" === "sigPaded") {
+			var sign =  JSON.parse('<%= raw @approver_sign %>');
+			jQuery('.sigPaded').each( function(i, obj) {
+				if(!jQuery(obj).hasClass('assigned')) {
+					jQuery(obj).addClass('assigned');
+					jQuery(obj).signaturePad({displayOnly:true}).regenerate(sign);
+				} 
+			});
+			
+		} else {
+			jQuery('.sigPad').signaturePad({drawOnly:true});
+		}
+	
+</script>

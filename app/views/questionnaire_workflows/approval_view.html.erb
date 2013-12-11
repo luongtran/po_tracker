@@ -1,0 +1,90 @@
+<style type="text/css">
+  .field {
+    padding:20px 0px 20px 0px;
+  }
+  .question_area{
+    width: 79%;
+    float: left;
+    border:#efee9f 1px solid;
+    background: #F9F9F9;
+  }
+  #answers_area{
+    width: 79%;
+    float: left;
+    border:#efee9f 1px solid;
+    background: #F9F9F9;
+  }
+</style>
+<div id="container">
+  <div class="field">
+    <label><b>Sent to: </b></label>
+    <%= @vendor_questionnaire.vendor.name %>
+  </div>
+  <%= form_tag @action_url, :method => "POST" do %>
+    <%= render "questionnaires/approver_questionnaire_detail" %>
+    <% @text = "Vendor signature" %>
+    <% @sign = @vendor_questionnaire.signatures.first.try(:sign) %>
+    <% if @sign.present? %>
+    <%= render "vendor_signature" %>
+    <% end %>
+    <hr/>
+    <% if @unsigned %>
+      <div class="field">
+        <p><b>Please choose approve or reject</b></p>
+        <div class="left">
+          <%= radio_button_tag :status, "approved" %><label>Approve</label>
+        </div>
+        <div class="right">
+          <%= radio_button_tag :status, "rejected" %><label>Reject and send back to vendor</label>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="field">
+        <p><label>Conversation</label></p>
+        <%= text_area_tag :conversation, "", :rows => 10, :cols => 60  ,required: true%>
+      </div>      
+        <% @text = "Approver signature" %>
+        <% @viewOnly = false %>
+        <%= render "approver_signature",text: @text,viewOnly: @viewOnly  %>
+      <hr/>
+      <%= submit_tag "Submit", :class => "right" %>
+      <%= submit_tag "Return to Vendor",class: "right"%>
+      <% end %>
+    <% end %>
+  </div>
+<script type="text/javascript">
+  jQuery("form").submit(function(event) {
+    var has_reject_select = false;
+    var checkedValue = jQuery('[name="status"]:checked').val();
+    if (checkedValue) {
+        var radio_groups = {};
+        jQuery('[name^="question_approver_status"]').each(function(){
+          radio_groups[this.name] = true;
+        });
+        for(group in radio_groups){
+        if_checked = !!jQuery("[name="+group+"]:checked").length ;
+        if(!if_checked){
+          jQuery("#ajax_loading").text("Please select approve or reject on all questions!!").fadeIn(300).delay(3000).fadeOut(300);
+          event.preventDefault();
+        }
+      }
+        jQuery.each(jQuery('[name^="question_approver_status"]:checked'),function(index, value){
+          if(jQuery(value).attr("disabled") !== "disabled"){
+           if(jQuery(value).val() === "rejected"){
+             has_reject_select = true;
+           }
+          }
+        });
+        if(has_reject_select && jQuery('[name="status"]:checked').val() === "approved"){
+               jQuery("#ajax_loading").text("Please approve all questionnaire answer to Approved that group!!").fadeIn(300).delay(3000).fadeOut(300);
+               event.preventDefault();
+             }
+        if(!has_reject_select && jQuery('[name="status"]:checked').val() === "rejected"){
+               jQuery("#ajax_loading").text("Please reject least one questionnaire answer to Rejected that group!!").fadeIn(300).delay(3000).fadeOut(300);          
+               event.preventDefault();
+             };
+    } else {
+        jQuery("#ajax_loading").text("Please select Approved or Rejected!!").fadeIn(300).delay(3000).fadeOut(300);
+    }
+});
+</script>

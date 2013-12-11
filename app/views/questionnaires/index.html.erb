@@ -1,0 +1,41 @@
+<style type="text/css" media="screen">
+    th.no, td.no { width: 200px; }
+    th.question, td.question { }
+    th.type, td.type { width: 200px; }
+    th.status, td.status {width:150px;}
+</style>
+
+<table class="information" cellspacing="0">
+  <tr>
+    <th class="no">
+      <%= link_to_sort "ID", "questions.id" %>
+    </th>
+    <th class="title">
+      <%= link_to_sort "Title", "questionsnaire.title" %>
+    </th>
+    <th class="description">
+      <%= link_to_sort "Description", "questionsnaire.description" %>
+    </th>
+  </tr>
+</table>
+
+<div id="maininfo">
+  <table class="information" cellspacing="0">
+    <% @questionnaires.each do |q| %>
+        <tr class="<%= cycle(:even, :odd) %>">
+          <td class="no">
+            <%= h q.id %>
+          </td>
+          <td class="questionnaires_questions">
+            <%= link_to q.title, questionnaire_path(q) %>
+          </td>
+          <td class="title">
+           <%= h q.description %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+<% if @questionnaires.count > 0 %>
+	<%= render 'shared/will_paginate', collection: @questionnaires %>
+<% end %>

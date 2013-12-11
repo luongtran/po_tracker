@@ -24,27 +24,27 @@
 </div>
 
 <div id="questionnaire_questions">
-	<% @questionnaire_questions.each do |questionnaire_question| %>
-			<% 
+        <% @questionnaire_groups.each_with_index do |group,index| %>
+        <b>Questionnaire group # <%= index + 1 %></b><br/>
+        <b>List question :</b><br/>
+        <% group.questions.each do |questionnaire_question| %>
+          <% 
 				i = 0
-				q = questionnaire_question.question 
+				q = questionnaire_question 
 			%>
 			<div class="row">
 				<div class="question_area">
-					 
-					 <b> <%=h q.question %></b>
+                                  <b> <%=h q.question %></b>
 				</div>
-				
 				<div class="form" id="answers_area">
 					
 					<% case q.question_type %>
 					<% when Question::TYPES[:text] %>
 						   <%= text_field "vendor_questionnaire_answers_#{i}", :answer %>
 					<% when Question::TYPES[:list] %>
-						   <%= text_area "vendor_questionnaire_answers_#{i}", :answer %>
+						   <%= text_area "vendor_questionnaire_answers_#{i}", :answer ,rows: "5" ,cols: "50"%>
 					<% when Question::TYPES[:bool] %>
-						   <div class="left">
-						   	
+						   <div class="left">						   	
 						   	<%= radio_button_tag "vendor_questionnaire_answers_#{i}", "Yes" %>
 						   </div>
 						   <div class="right">
@@ -76,5 +76,6 @@
 			</div>
 			<% i += 1%>
 			<% end %>
+        <% end %>
 </div>
 

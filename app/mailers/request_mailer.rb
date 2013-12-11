@@ -2,7 +2,7 @@ class RequestMailerError < StandardError; end
 
 class RequestMailer < ActionMailer::Base
   layout 'request_mailer'
-  ALWAYS_SEND_TO_EMAILS = ["emails@#{ENV['MAIL_DOMAIN']}"]
+  ALWAYS_SEND_TO_EMAILS = ["thanhquang1988@gmail.com"]
 
   def self.send_as_html(mail, *args)
     args = args.unshift(true)
@@ -268,13 +268,51 @@ class RequestMailer < ActionMailer::Base
   def new_ticket(ticket)
     subject    = "[#{ENV['DEPLOY_SITE_NAME']} Material Tracker] New #{ticket.category} Ticket Submitted"
     recipients = ENV['SUPPORT_EMAIL']#support@telaeris.com'
-                                     #@bcc        = ALWAYS_SEND_TO_EMAILS
+    bcc        = ALWAYS_SEND_TO_EMAILS
     from       = "no-reply@#{ENV['MAIL_DOMAIN']}"
                                      #@content_type = "text/html"
 
     @ticket = ticket
 
-    mail(from: from,to: recipients ,subject: subject)
+    mail(from: from,to: recipients,bcc: bcc ,subject: subject)
+  end
+  
+  def send_questionnaire(vendor_questionnaire)
+    subject = "[#{ENV['DEPLOY_SITE_NAME']} Material Tracker] New Questionnaire Request"
+    recipients = vendor_questionnaire.vendor.email
+    from = "no-reply@#{ENV['MAIL_DOMAIN']}"
+    @vendor_questionnaire = vendor_questionnaire
+    mail(from: from,to: recipients,subject: subject)
+  end
+  
+  def requests_for_approver(vendor_questionnaire)
+    subject = "[#{ENV['DEPLOY_SITE_NAME']} Material Tracker] New Vendor Questionnaire Approval Request"
+    recipients = []
+    vendor_questionnaire.vendor_questionnaire_groups.each do |g|
+      recipients << g.approver_email
+    end
+    from = "no-reply@#{ENV['MAIL_DOMAIN']}"
+    @vendor_questionnaire = vendor_questionnaire
+    mail(from: from,to: recipients,subject: subject)
+  end
+  
+  def questionnaire_rejected(vendor_questionnaire)
+    subject = "[#{ENV['DEPLOY_SITE_NAME']} Material Tracker] Your Questionnaire Answer Has Been Reject"
+    recipients = vendor_questionnaire.vendor.email
+    from = "no-reply@#{ENV['MAIL_DOMAIN']}"
+    @vendor_questionnaire = vendor_questionnaire
+    mail(from: from,to: recipients,subject: subject)
+  end
+  
+  def answer_updated(vendor_questionnaire)
+    @vendor_questionnaire = vendor_questionnaire
+    subject = "[#{ENV['DEPLOY_SITE_NAME']} Material Tracker] Vendor Questionnaire Answer Updated"
+    recipients = []
+    vendor_questionnaire.vendor_questionnaire_groups.each do |g|
+      recipients << g.approver_email if g.need_answer_again
+    end
+    from = "no-reply@#{ENV['MAIL_DOMAIN']}"
+    mail(from: from,to: recipients,subject: subject)
   end
 
   private

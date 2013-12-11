@@ -42,8 +42,7 @@ MaterialTracker::Application.configure do
   #config.log_tags = [:uuid, :remote_ip]
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-  #config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   #ActionMailer::Base.default :from => "admin@example.com"
   #
   #config.action_mailer.smtp_settings = {
@@ -54,7 +53,15 @@ MaterialTracker::Application.configure do
   #     user_name: 'admin@example.com',
   #     password: 'password'
   #}
-
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => "587",
+    :domain               => "gmail.com",
+    :user_name            => "fsrteam.demo@gmail.com",
+    :password             => "m54[+7(5V'>C9y-",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
   ThinkingSphinx.suppress_delta_output = true
 
 end

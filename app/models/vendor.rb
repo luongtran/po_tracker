@@ -73,8 +73,8 @@ class Vendor < ActiveRecord::Base
   # VALIDATIONS
   ############################################################################
 
-  validates_presence_of :name
-
+  validates :name, :email ,:presence => true
+  
 
   ############################################################################
   # INSTANCE METHODS

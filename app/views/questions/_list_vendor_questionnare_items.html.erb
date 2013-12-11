@@ -1,0 +1,90 @@
+<style type="text/css">
+	.left {
+		width:20%;
+		float:left;
+	}
+	
+	 .right {
+		width:20%;
+		float:left;
+	}
+	.row {
+		//border-bottom: solid 1px;
+		padding:10px;
+	}
+        .approve_area{
+          width: 20%;
+          float: right;
+        }
+</style>
+<% i = 0 %>
+ <% @vendor_questionnaire_groups.each_with_index do |group,index| %>
+        <b>Questionnaire group # <%= index + 1 %></b><br/>
+        <b>List question :</b><br/>
+        <% group.questions.each do |questionnaire_question| %>
+			<%
+				q = questionnaire_question 
+			%>
+			<div class="row">
+				<div class="question_area">
+					 
+					 <b> <%=h q.question %></b>
+				</div>
+				
+				<div class="form" id="answers_area">
+                                  <%= hidden_field "vendor_questionnaire_answers_#{i}", :question_id, :value => q.id %>
+					<% vendor_answer = answer(@vendor_questionnaire, q) %>
+					
+					<% case q.question_type %>
+					<% when Question::TYPES[:text] %>
+						   <%= text_field "vendor_questionnaire_answers_#{i}", :answer, :value => vendor_answer ,disabled: !@vendor_answer %>
+					<% when Question::TYPES[:list] %>
+						   <%= text_area "vendor_questionnaire_answers_#{i}", :answer, :value => vendor_answer ,rows: "5",cols: "140",disabled: !@vendor_answer%>
+					<% when Question::TYPES[:bool] %>
+						   <div class="left">
+						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "Yes", :checked => (vendor_answer == "Yes") ,disabled: !@vendor_answer%> Yes
+						   </div>
+						   <div class="right">
+						   	<%= radio_button "vendor_questionnaire_answers_#{i}", :answer, "No", :checked => (vendor_answer == "No")  ,disabled: !@vendor_answer%> No
+						   </div>
+					<% when (Question::TYPES[:multiple]) %>
+							<% j = 1 %>
+							<% q.question_answers.each do |answer| %>
+								<div class="<%= j % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								    <%= check_box_tag "question_answer_ids_#{questionnaire_question.id}[]",  answer.id, is_vendor_answer(answer.id, @vendor_questionnaire),disabled: !@vendor_answer %>
+								    <%= answer.answer %>
+								    
+							    </div>
+							<% end %>
+							
+					<% when (Question::TYPES[:single]) %>
+							<% j = 1 %>
+							<% q.question_answers.each do |answer| %>
+								<div class="<%= j % 2 == 0 ? 'right' : 'left' %> answer_wrapper">
+								    <%= radio_button "vendor_questionnaire_answers_#{i}", :question_answer_id, answer.id, :checked => (vendor_answer == answer.id),disabled: !@vendor_answer %>
+								    <%= answer.answer %>
+							    </div>
+							<% end %>
+							
+					<% end %>
+					
+				</div>
+                              <div class="approve_area">
+                                   <% if q.approve_status(group.id) == "approved" %>
+                                      <div class="approve"></div>
+                                   <% elsif q.approve_status(group.id) == "rejected" %>
+                                      <div class="reject"></div>
+                                  <% end %>
+                              </div>
+				<div class="clear"></div>
+			</div>
+			<% i += 1%>
+			<% end %>
+        <% if group.vendor_questionnaire_approvals.length > 0 %>
+          <% @text = "Approver signature" %>
+          <% @viewOnly = true %>
+          <% @approver_sign = group.signature.try(:sign) %>
+          <% @vendor_questionnaire_approvals = group.vendor_questionnaire_approvals %>
+          <%= render "approver_signature",text: @text,approver_sign: @approver_sign,viewOnly: @viewOnly,vendor_questionnaire_approvals: @vendor_questionnaire_approvals %>
+        <% end %>
+        <% end %>

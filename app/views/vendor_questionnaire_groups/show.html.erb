@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Approval status:</b>
+  <%= @vendor_questionnaire_group.approval_status %>
+</p>
+
+<p>
+  <b>String,:</b>
+  <%= @vendor_questionnaire_group.string, %>
+</p>
+
+<p>
+  <b>Questionnaire group:</b>
+  <%= @vendor_questionnaire_group.questionnaire_group_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_vendor_questionnaire_group_path(@vendor_questionnaire_group) %> |
+<%= link_to 'Back', vendor_questionnaire_groups_path %>

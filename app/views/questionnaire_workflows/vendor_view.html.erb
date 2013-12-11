@@ -1,0 +1,47 @@
+<style type="text/css">
+	.field {
+		padding:20px 0px 20px 0px;
+	}
+        .question_area{
+          width: 79%;
+          float: left;
+          border:#efee9f 1px solid;
+          background: #F9F9F9;
+        }
+        #answers_area{
+          width: 79%;
+          float: left;
+          border:#efee9f 1px solid;
+          background: #F9F9F9;
+        }
+        .approve{
+           height: 150px;
+           width:auto;
+           background-image: url("/assets/icons/approve.png");
+           background-repeat: no-repeat;
+        }
+        .reject{
+           height: 150px;
+           width:auto;
+           background-image: url("/assets/icons/reject.png");
+           background-repeat: no-repeat;
+        }
+</style>
+<div id="container">
+		<div class="field">
+			<label><b>Sent to: </b></label>
+			<%= @vendor_questionnaire.vendor.name %>
+		</div>
+		<%= form_tag @action_url,:method => "POST" do %>
+			<%= render "questionnaires/vendor_questionnaire_detail" %>
+                              <% if @vendor_answer == false %>
+                                    <% @text = "Vendor signature" %>
+                                    <% @sign = @vendor_signatures.try(:sign) %>
+                                    <%= render "vendor_signature" %>
+                              <% else %>
+                                    <% @text = "Vendor signature" %>
+                                    <%= render "vendor_signature" %>
+                                    <%= submit_tag "Submit", :class => "right" %>
+                             <% end %>
+		<% end %>
+</div>

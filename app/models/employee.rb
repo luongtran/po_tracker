@@ -46,7 +46,6 @@ class Employee < ActiveRecord::Base
   states_for :start_page => ['Menu', 'Orders', 'Material Requests', 'Web Requests', 'Reports', 'POPV']
   #validates_inclusion_of_role :message => "must be one of admin, warehouse, purchasing, planning, or requesting", :allow_nil => true
 
-
   ADMIN = 0
   WAREHOUSE = 1
   PURCHASING=2
@@ -112,10 +111,8 @@ class Employee < ActiveRecord::Base
     self.role == Employee::POPV_ADMIN
   end
   def popv_viewer?
-
     self.role == Employee::POPV_VIEWER
   end
-
   acts_as_log_edits
 
   extend Listable::ModelHelper
@@ -127,7 +124,8 @@ class Employee < ActiveRecord::Base
   has_many :planned_orders, :class_name => "Order", :foreign_key => "planner_id"
   has_many :requested_orders, :class_name => "Order", :foreign_key => "requested_by_id"
   has_many :material_requests, :foreign_key => "requested_by_id"
-
+  has_many :vendor_questionnaires
+  has_many :vendor_questionnaire_approvals
   has_one :basket
 
   belongs_to :current_bom, :class_name => "Bill", :foreign_key => 'current_bom_id'
@@ -153,7 +151,7 @@ class Employee < ActiveRecord::Base
   PERPAGE = 100
 
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name ,:email
   validates_presence_of :company_id
   validates_numericality_of :badge_no, :only_integer => true, :allow_nil => true
 
@@ -271,7 +269,7 @@ class Employee < ActiveRecord::Base
         ['Requester Admin', REQUESTING_ADMIN],
         ['Receiver', RECEIVING],
         ['Engineer', ENGINEER],
-        ['POPV Viewer', POPV_VIEWER]
+        ['POPV Viewer', POPV_VIEWER]        
     ]
 
     if(Rails.env.development? || Rails.env.test? || Employee.current_employee.popv_admin?)
@@ -332,7 +330,7 @@ class Employee < ActiveRecord::Base
       return nil
     end
   end
-
+  
   def self.create_telaeris_admin
     e = Employee.find_by_login("telaeris_admin")
     if(e.blank?)

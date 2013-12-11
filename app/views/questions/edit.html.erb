@@ -1,0 +1,30 @@
+<h1>Editing question_item</h1>
+<%= form_for @question, :html => { :class => "edit full" } do |f| %>
+<div class="left">
+  <p>
+    <label>Question <span class="required">(required)</span></label>
+    <%= f.text_field :question, :class => "text" %>
+    <%= error_message_on(:question, :question) %>
+  </p>
+
+  <div class="left">
+  <p>
+    <label>Question Type</label>
+    <%= f.select :question_type, options_for_select(@question_types) %>
+  </p>
+  </div>
+  
+  <div class="right">
+    <p>
+      <label>Active</label>
+      <%= f.check_box :active, :class => "text" %>
+    </p>  
+  </div>
+  
+</div>
+
+<p class="menu noprint clear">
+  <%= submit_tag "Save Question", :class => "submit" %> or 
+  <%= link_to_back %>
+</p>
+<% end %>

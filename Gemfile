@@ -49,6 +49,9 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'meta_request'
   gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'debugger'
+  gem 'binding_of_caller'
 end
 
 #gem 'fcgi'
@@ -63,4 +66,3 @@ gem "gruff"
 
 gem "activerecord-import"
 #gem 'object_daddy'
-

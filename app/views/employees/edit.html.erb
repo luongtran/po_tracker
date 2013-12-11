@@ -61,8 +61,8 @@
 
   <div class="left clear">
   <p>
-    <label>Email</label>
-    <%= f.text_field :email, :readonly => d_login?(@employee), :class => "text" %>
+    <label>Email <span class="required">(required)</span></label>
+    <%= f.text_field :email, :readonly => d_login?(@employee),:class => "required text", :title => "Email can't be blank"  %>
   </p>
   </div>
 

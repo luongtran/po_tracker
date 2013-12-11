@@ -31,11 +31,21 @@ class QuestionsController < ApplicationController
   end
   
   def edit
-    
+    @question = Question.find(params[:id])
+    @question_types = Question::TYPES_ARR
   end
   
   def update
-    
+    @question = Question.find(params[:id])
+    respond_to do |format|
+      if @question.update_attributes(params[:question])
+        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render :action => "edit" }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def destroy

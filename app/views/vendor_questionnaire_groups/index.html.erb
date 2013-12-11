@@ -1,0 +1,27 @@
+<h1>Listing vendor_questionnaire_groups</h1>
+
+<table>
+  <tr>
+    <th>Approval status</th>
+    <th>String,</th>
+    <th>Questionnaire group</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendor_questionnaire_groups.each do |vendor_questionnaire_group| %>
+  <tr>
+    <td><%= vendor_questionnaire_group.approval_status %></td>
+    <td><%= vendor_questionnaire_group.string, %></td>
+    <td><%= vendor_questionnaire_group.questionnaire_group_id %></td>
+    <td><%= link_to 'Show', vendor_questionnaire_group %></td>
+    <td><%= link_to 'Edit', edit_vendor_questionnaire_group_path(vendor_questionnaire_group) %></td>
+    <td><%= link_to 'Destroy', vendor_questionnaire_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vendor questionnaire group', new_vendor_questionnaire_group_path %>

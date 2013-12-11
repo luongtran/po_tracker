@@ -1,0 +1,12 @@
+<div class="field">
+	<p><center><b><%= @questionnaire.title %></b></center></p>
+</div>
+
+<div class="field">
+	
+	<%= @questionnaire.description %>	
+</div>
+
+<div id="questionnaire_questions">
+	<%= render "questions/list_approver_questionnare_items" %>
+</div>

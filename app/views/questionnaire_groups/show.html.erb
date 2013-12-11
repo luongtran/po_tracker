@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Questionnaire:</b>
+  <%= @questionnaire_group.questionnaire_id %>
+</p>
+
+<p>
+  <b>Approver:</b>
+  <%= @questionnaire_group.approver_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_questionnaire_group_path(@questionnaire_group) %> |
+<%= link_to 'Back', questionnaire_groups_path %>
