@@ -15,7 +15,6 @@ class QuestionnaireWorkflowsController < ApplicationController
   end
   
   def show   
-    @user = current_employee
     @employees = Employee.all
   end
   
@@ -48,7 +47,6 @@ class QuestionnaireWorkflowsController < ApplicationController
   # Step 2: Vendor answer questionnaire 
   # Comment line is for vendor sign_in future function
   def vendor_view
-    @user = current_employee
 #    @vendor = curren_vendor                                   # current vendor sign_in
 #    if @vendor.access_key == @vendor_questionnaire.access_key
       @action_url = vendor_answer_path(@vendor_questionnaire)
@@ -107,7 +105,6 @@ class QuestionnaireWorkflowsController < ApplicationController
   end
   
   def approval_view
-    @user = current_employee
     @unsigned = false
     @active_group = @vendor_questionnaire_groups.where(approver_id: @user.id)
     if @active_group.length > 0
@@ -133,7 +130,6 @@ class QuestionnaireWorkflowsController < ApplicationController
   end
   
   def approval
-    @user = current_employee
     @active_groups = @vendor_questionnaire_groups.where(approver_id: @user.id)
     if params[:status]
       save_approval
@@ -141,8 +137,15 @@ class QuestionnaireWorkflowsController < ApplicationController
     end
   end
   
+  def completed
+    if request.post?
+      @vendor_questionnaire.update_attributes(approval_status: "approved",completed_at: Time.now)
+    end
+    render "application_approved"
+  end
+  
   def application_approved
-    if @vendor_questionnaire.approval_step == 11 && @questionnaire.completed_at != nil
+    if @vendor_questionnaire.approval_status == "approved"
       respond_to do |format|
         format.html
       end
@@ -210,6 +213,7 @@ class QuestionnaireWorkflowsController < ApplicationController
   end
   
   def load_vendor_questionnaire
+    @user = current_employee
     @vendor_questionnaire = VendorQuestionnaire.includes(:questionnaire, :vendor).find(params[:id])
     @questionnaire = @vendor_questionnaire.questionnaire
     @vendor_questionnaire_groups = @vendor_questionnaire.vendor_questionnaire_groups.includes(:questionnaire_group)

@@ -28,20 +28,26 @@
         }
 </style>
 <div id="container">
-		<div class="field">
-			<label><b>Sent to: </b></label>
-			<%= @vendor_questionnaire.vendor.name %>
-		</div>
-		<%= form_tag @action_url,:method => "POST" do %>
-			<%= render "questionnaires/vendor_questionnaire_detail" %>
-                              <% if @vendor_answer == false %>
-                                    <% @text = "Vendor signature" %>
-                                    <% @sign = @vendor_signatures.try(:sign) %>
-                                    <%= render "vendor_signature" %>
-                              <% else %>
-                                    <% @text = "Vendor signature" %>
-                                    <%= render "vendor_signature" %>
-                                    <%= submit_tag "Submit", :class => "right" %>
-                             <% end %>
-		<% end %>
+  <% if @vendor_questionnaire.approval_status == "approved" %>
+  <div class="congratulations"
+    <h3>Congratulations !</h3>
+    <h3>Your application is completed and is good until <%= @vendor_questionnaire.completed_at.strftime("%m/%d/%Y %H:%M") %></h3>
+    </div>
+  <% end %>
+    <div class="field">
+            <label><b>Sent to: </b></label>
+            <%= @vendor_questionnaire.vendor.name %>
+    </div>
+    <%= form_tag @action_url,:method => "POST" do %>
+            <%= render "questionnaires/vendor_questionnaire_detail" %>
+                  <% if @vendor_answer == false %>
+                        <% @text = "Vendor signature" %>
+                        <% @sign = @vendor_signatures.try(:sign) %>
+                        <%= render "vendor_signature" %>
+                  <% else %>
+                        <% @text = "Vendor signature" %>
+                        <%= render "vendor_signature" %>
+                        <%= submit_tag "Submit", :class => "right" %>
+                 <% end %>
+    <% end %>
 </div>

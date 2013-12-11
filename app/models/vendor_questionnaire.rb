@@ -1,5 +1,5 @@
 class VendorQuestionnaire < ActiveRecord::Base
-  attr_accessible :approval_status, :questionnaire_id, :vendor_id ,:access_key, :vendor_answer,:employee_id
+  attr_accessible :approval_status, :questionnaire_id, :vendor_id ,:access_key, :vendor_answer,:employee_id,:completed_at
   belongs_to :vendor
   belongs_to :questionnaire
   has_many :vendor_questionnaire_answers

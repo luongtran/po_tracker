@@ -385,7 +385,7 @@ MaterialTracker::Application.routes.draw do
   post 'vendor-answer-questionnaire/(:id)' => 'questionnaire_workflows#vendor_answer', :as => :vendor_answer
   get 'approval/(:id)' => 'questionnaire_workflows#approval_view', :as => :approval_view
   post 'approval/(:id)' => 'questionnaire_workflows#approval', :as => :approval
-  
+  match 'completed-vendor-questionnaire/(:id)' => 'questionnaire_workflows#completed' , :as => :complete_vendor_questionnaire
   match 'application_approved/(:id)' => 'questionnaire_workflows#application_approved' , :as => :application_approved
   match '/signup' => 'employees#new', :as => :signup
   match '/login' => 'sessions#new', :as => :login

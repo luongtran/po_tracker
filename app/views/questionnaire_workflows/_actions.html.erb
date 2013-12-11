@@ -1,0 +1,3 @@
+<% if @user.id == @vendor_questionnaire.employee_id && @vendor_questionnaire.approval_status != "approved" %>
+<li><%= img_button "Completed Questionnaire", "accept.png", complete_vendor_questionnaire_path(@vendor_questionnaire),method: "POST" %></li>
+<% end %>

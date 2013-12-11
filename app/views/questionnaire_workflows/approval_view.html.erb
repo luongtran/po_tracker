@@ -16,6 +16,12 @@
   }
 </style>
 <div id="container">
+  <% if @vendor_questionnaire.approval_status == "approved" %>
+  <div class="congratulations"
+    <h3>Congratulations !</h3>
+    <h3>Your application is completed and is good until <%= @vendor_questionnaire.completed_at.strftime("%m/%d/%Y %H:%M") %></h3>
+    </div>
+  <% end %>
   <div class="field">
     <label><b>Sent to: </b></label>
     <%= @vendor_questionnaire.vendor.name %>
