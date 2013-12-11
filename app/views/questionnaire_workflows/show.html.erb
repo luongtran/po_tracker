@@ -2,6 +2,31 @@
   .field {
     padding:20px 0px 20px 0px;
   }
+  .question_area{
+          width: 79%;
+          float: left;
+          border:#efee9f 1px solid;
+          background: #F9F9F9;
+        }
+        #answers_area{
+          width: 79%;
+          float: left;
+          border:#efee9f 1px solid;
+          background: #F9F9F9;
+        }
+        .approve{
+           height: 150px;
+           width:auto;
+           background-image: url("/assets/icons/approve.png");
+           background-repeat: no-repeat;
+        }
+        .reject{
+           height: 150px;
+           width:auto;
+           background-image: url("/assets/icons/reject.png");
+           background-repeat: no-repeat;
+        }
+  
 </style>
 <div id="container">
   <div class="field">
@@ -10,25 +35,10 @@
   </div>
   <%= form_tag @action_url, :method => "POST" do %>
     <%= render "questionnaires/questionnaire_detail" %>
-    <% if @approver_view %>
-      <div class="field">
-        <p><b>Please choose approve or reject</b></p>
-        <div class="left">
-          <%= radio_button_tag :status, "approved" %><label>Approve</label>
-        </div>
-        <div class="right">
-          <%= radio_button_tag :status, "rejected" %><label>Reject and send back to vendor</label>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="field">
-        <p><label>Conversation</label></p>
-        <%= text_area_tag :conversation, "", :rows => 10, :cols => 60  %>
-      </div>
-      <% @text = "Approver signature" %>
-      <%= render "approver_signature" %>
-      <hr/>
-      <%= submit_tag "Submit", :class => "right",data: { :disable_with => "Please wait..."} %>
-      <% end %>
+    <% @text = "Vendor signature" %>
+    <% @sign = @vendor_questionnaire.signatures.first.try(:sign) %>
+    <% if @sign.present? %>
+    <%= render "vendor_signature" %>
+    <% end %>
     <% end %>
   </div>

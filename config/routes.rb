@@ -1,11 +1,7 @@
 MaterialTracker::Application.routes.draw do
 
   resources :vendor_questionnaire_groups
-
-
   resources :questionnaire_groups
-
-
   resources :questionairre_items
   post '/save_questionairre_answers' => 'questionairre_items#save_answer'
   post '/delete_answer' => 'questionairre_items#delete_answer'
